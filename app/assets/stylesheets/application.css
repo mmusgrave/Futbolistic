@@ -15,11 +15,30 @@
  */
 header {
   position: relative;
+  background-color: black;
   font-family: "Proxima Nova";
-  font-size: 20px;
+  font: 20px white;
   vertical-align: baseline;
+  color: white;
 }
 
 .flyout {
   position: relative;
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+div {
+  background-color: white;
+}
+
+.white-link {
+  color: white;
+}
+
+.header-group {
+
 }

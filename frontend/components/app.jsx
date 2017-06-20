@@ -18,7 +18,7 @@ const App = () => (
       <Link to="/" className="header-link">
         <ul>
           <li className="flyout">
-            <h1>Futbolistic</h1>
+            <h1 className="white-link">Futbolistic</h1>
           </li>
 
         </ul>
