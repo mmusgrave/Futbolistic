@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+header {
+  position: relative;
+  font-family: "Proxima Nova";
+  font-size: 20px;
+  vertical-align: baseline;
+}
+
+.flyout {
+  position: relative;
+}

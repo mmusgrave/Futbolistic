@@ -8,9 +8,14 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +29,19 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
     "webpack": "^3.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmusgrave/Futbolistic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mmusgrave/Futbolistic/issues"
+  },
+  "homepage": "https://github.com/mmusgrave/Futbolistic#readme"
 }
