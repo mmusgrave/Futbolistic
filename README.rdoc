@@ -33,16 +33,11 @@ Objective: Stories can be created, read, edited and destroyed through the API.
 
 Phase 3: Topics, Tags, & Feeds (2 days)
 
-Objective: Stories can be tagged with multiple tags. Each tag has a topic.
-           They then belong to the associated topic. Stories belong to Topics
-           that can be created and destroyed through the API. There can then
-           be a feed made for each topic, of all stories tagger by that topic.
+Objective: Stories can be tagged with multiple tags. Each tag has a topic. They then belong to the associated topic. Stories belong to Topics that can be created and destroyed through the API. There can then be a feed made for each topic, of all stories tagger by that topic.
 
 Phase 4: Comments, Subscriptions & Feeds (1 day, W2 Th 6pm)
 
-Objective: Allow users to have subscriptions to topics that will display a feed
-           of all stories associated with all of their topics. Allow users to comment
-           on stories.
+Objective: Allow users to have subscriptions to topics that will display a feed of all stories associated with all of their topics. Allow users to comment on stories.
 
 Phase 5: Allow Complex Styling in Stories and infinite scroll (1 day, W2 Th 6pm)
 
@@ -51,8 +46,7 @@ Objective: Allow rich text editing of stories. Add infinite scroll to Stories
 
 Phase 6: - Follows (1 day, W2 F 6pm)
 
-Objective: Implement Followers and Follows Indexes, and a Feed of stories
-           published by followed authors.
+Objective: Implement Followers and Follows Indexes, and a Feed of stories published by followed authors.
 
 Bonus Features (TBD)
 
