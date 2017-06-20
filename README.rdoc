@@ -41,8 +41,7 @@ Objective: Allow users to have subscriptions to topics that will display a feed 
 
 Phase 5: Allow Complex Styling in Stories and infinite scroll (1 day, W2 Th 6pm)
 
-Objective: Allow rich text editing of stories. Add infinite scroll to Stories
-           Index and Feeds.
+Objective: Allow rich text editing of stories. Add infinite scroll to Stories, Index and Feeds.
 
 Phase 6: - Follows (1 day, W2 F 6pm)
 
