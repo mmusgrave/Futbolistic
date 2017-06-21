@@ -6,10 +6,10 @@ const sessionLinks = (clearErrors) => {
     <nav className="login-signup">
       <ul className="nav-bar-ul">
         <li className="flyout">
-          <Link to="/signup" className="white-link"> Sign up </Link>
+          <Link to="/signup" className="header-button white-link"> Sign up </Link>
         </li>
         <li className="flyout">
-          <Link to="/login" className="white-link">  Login </Link>
+          <Link to="/login" className="header-button white-link">  Login </Link>
         </li>
       </ul>
     </nav>

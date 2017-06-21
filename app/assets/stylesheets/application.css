@@ -14,7 +14,7 @@
  *= require_self
  */
 
-*{
+* {
   /*font-family: "Gotham Cond",Helvetica,Arial,sans-serif;*/
   font-family: fantasy;
 }
@@ -122,12 +122,16 @@ div {
 }
 
 .header-button {
+  display: block;
+  text-align: center;
   background-color: black;
   color: white;
   border-radius: 8px;
   border: none;
   color: white;
   font-size: 20px;
+  width: 100px;
+
 }
 .header-button:hover {
   background-color: white;
