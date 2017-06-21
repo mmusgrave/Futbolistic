@@ -8,11 +8,18 @@ import {
 
 const nullUser = Object.freeze({
   currentUser: null,
-  errors: []
+  errors: {
+    // username: [],
+    // password:[],
+    // first_name: [],
+    // last_name: [],
+    // base: []
+  }
 });
 
 const SessionReducer = (state = nullUser, action) => {
   Object.freeze(state)
+  // debugger
   let currentState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
@@ -22,7 +29,7 @@ const SessionReducer = (state = nullUser, action) => {
       currentState.errors = action.errors;
       return currentState;
     case CLEAR_ERRORS:
-      currentState.errors = []
+      currentState.errors = {};
       return currentState;
     default:
       return state;

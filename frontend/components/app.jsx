@@ -12,24 +12,25 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-const App = () => (
-  <div>
-    <header>
-      <ul className="nav-bar-ul">
-        <li className="flyout">
-          <Link to="/" className="white-link">Futbolistic</Link>
-        </li>
-      </ul>
-      <GreetingContainer />
-    </header>
-    <div className="content">
-      <Switch>
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
-        </Switch>
+const App = () => {
+  // debugger
+  return (
+    <div>
+      <header>
+        <ul className="nav-bar-ul">
+          <li className="flyout">
+            <Link to="/" className="white-link">Futbolistic</Link>
+          </li>
+        </ul>
+        <GreetingContainer />
+      </header>
+      <div className="content">
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default App;
 

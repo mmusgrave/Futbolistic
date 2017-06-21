@@ -4,6 +4,7 @@ import {
 } from '../actions/session_actions';
 
 export const login = user => {
+  // debugger
   return $.ajax({
     method: 'POST',
     url: '/api/session',
@@ -12,6 +13,7 @@ export const login = user => {
 };
 
 export const signup = user => {
+  // debugger
   return $.ajax({
     method: 'POST',
     url: '/api/user',

@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   attr_reader :password
 
-	validates :username, :password_digest, :session_token, presence: true
+	validates :username, :password_digest, :session_token, :first_name, :last_name, presence: true
+  # validates :username, presence: true, message: { ["Username can't be blank"] }
+  # validates :first_name, presence: true, message: { ["First name can't be blank"] }
+  # validates :last_name, presence: true, message: { ["Last name can't be blank"] }
 	validates :username, uniqueness: true
 	validates :password, length: {minimum: 6}, allow_nil: :true
 

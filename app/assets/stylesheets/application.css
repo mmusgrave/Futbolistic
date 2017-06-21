@@ -19,6 +19,10 @@
   font-family: fantasy;
 }
 
+ul {
+  list-style: none;
+}
+
 header {
   position: relative;
   background-color: black;
@@ -33,23 +37,34 @@ header {
   height: 80px;
 }
 
-.errors {
+.name-errors {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0px;
+  height: 0px;
+}
 
+.errors {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  height: 0px;
+  z-index:+1;
 }
 
 .error {
   list-style: none;
   text-shadow: 1px 1px 1px red;
+  display: block;
+  z-index:+1;
 }
 
 .nav-bar-ul {
   padding-left: 0px;
-}
-
-ul {
   display: flex;
   justify-content: space-between;
 }
+
 
 .flyout {
   position: relative;
@@ -111,7 +126,8 @@ div {
   color: white;
   border-radius: 8px;
   border: none;
-  font: 20px white;
+  color: white;
+  font-size: 20px;
 }
 .header-button:hover {
   background-color: white;
@@ -122,14 +138,22 @@ div {
 .auth-form-button {
   background-color: black;
   width: 90px;
+  height: 30px;
+  line-height: 33px;
+  margin: 0 auto;
   color: white;
-  border-radius: 8px;
+  border-radius: 3px;
   border: none;
-  font: 20px white;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  display: block
 }
 .auth-form-button:hover {
   cursor: pointer;
 }
+
+
 
 .header-group {
 

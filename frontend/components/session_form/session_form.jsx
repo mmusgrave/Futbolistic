@@ -13,10 +13,19 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    // debugger
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+  }
+
+  componentWillUnmount() {
+    // debugger
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -33,32 +42,32 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      this.state = {
-        first_name: '',
-        last_name: '',
-        username: '',
-        password: ''
-      };
+      // this.state = {
+      //   first_name: '',
+      //   last_name: '',
+      //   username: '',
+      //   password: ''
+      // };
       return(
         <div>
           <h2>Don't Already Have an Account?</h2>
           <div className="nav-link-div">
-            <Link onClick={this.props.clearErrors} to="/signup">SIGN UP</Link>
+            <Link className="auth-form-button" to="/signup">SIGN UP</Link>
           </div>
         </div>
       );
     } else {
-      this.state = {
-        first_name: '',
-        last_name: '',
-        username: '',
-        password: ''
-      };
+      // this.state = {
+      //   first_name: '',
+      //   last_name: '',
+      //   username: '',
+      //   password: ''
+      // };
       return(
         <div>
           <h2>Already Have an Account?</h2>
           <div className="nav-link-div">
-            <Link onClick={this.props.clearErrors} to="/login">LOG IN</Link>
+            <Link className="auth-form-button" to="/login">LOG IN</Link>
           </div>
         </div>
       );
@@ -87,37 +96,43 @@ class SessionForm extends React.Component {
     } else {
       return(
         <div>
+        <ul className="name-errors">
+        {this.renderErrors("first_name")}
+        {this.renderErrors("last_name")}
+        </ul>
           <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
             className="create-user-input"
             placeholder="First Name"
           />
+
           <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
+            value={this.state.last_name}
+            onChange={this.update('last_name')}
             className="create-user-input"
             placeholder="Last Name"
           />
-          <br/><br/>
         </div>
       );
     }
   }
 
-  renderErrors() {
-    if (this.props.errors){
+  renderErrors(fieldName) {
+    const errors = this.props.errors[fieldName];
+    if (errors){
       return(
         <ul className="errors">
-          {this.props.errors.map((error, i) => (
-            <div key={`error-${i}`}>
-              <li className="error" key={`error-${i}`}>
-                {error}
-              </li>
-              <br/>
-            </div>
+          {errors.map( (error, i) => (
+            <li className="error" key={`error-${i}`}>
+              {error}
+            </li>
           ))}
         </ul>
+      );
+    } else {
+      return (
+        <br/>
       );
     }
   }
@@ -128,22 +143,24 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="login-form">
             {this.formHeader()}
-            {this.renderErrors()}
             {this.formInputs()}
+            {this.renderErrors("username")}
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
                 placeholder="Username"
               />
-              <br/><br/>
+              <br/>
+              {this.renderErrors("password")}
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
                 placeholder="Password"
               />
-              <br/><br/>
+              {this.renderErrors("base")}
+              <br/>
               {this.formButton()}
               <br/>
               {this.navLink()}
