@@ -13,30 +13,122 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+  /*font-family: "Gotham Cond",Helvetica,Arial,sans-serif;*/
+  font-family: fantasy;
+}
+
 header {
   position: relative;
   background-color: black;
-  font-family: "Proxima Nova";
+  /*font-family: arial;
+  font-style: normal;
+  font-weight: 400;*/
   font: 20px white;
   vertical-align: baseline;
   color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.errors {
+
+}
+
+.error {
+  list-style: none;
+  text-shadow: 1px 1px 1px red;
+}
+
+.nav-bar-ul {
+  padding-left: 0px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
 }
 
 .flyout {
   position: relative;
   color: white;
+  list-style-type: none;
+  width: 100px;
 }
 
 body {
   background-color: black;
 }
 
+input {
+  height: 50px;
+  font-size: 20px;
+}
+
 div {
-  background-color: white;
+
+}
+
+.create-user-input {
+  width: 150px;
+}
+
+.login-input {
+  width: 300px;
 }
 
 .white-link {
   color: white;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  vertical-align: baseline;
+  width: 900px;
+}
+
+.login-form-box {
+  padding-top: 75px;
+  padding-bottom: 100px;
+  background-color: white;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-button {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font: 20px white;
+}
+.header-button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.auth-form-button {
+  background-color: black;
+  width: 90px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font: 20px white;
+}
+.auth-form-button:hover {
+  cursor: pointer;
 }
 
 .header-group {

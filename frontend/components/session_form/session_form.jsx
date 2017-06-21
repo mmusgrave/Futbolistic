@@ -5,6 +5,8 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      first_name: '',
+      last_name: '',
       username: '',
       password: ''
     };
@@ -31,102 +33,165 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
+      this.state = {
+        first_name: '',
+        last_name: '',
+        username: '',
+        password: ''
+      };
       return(
         <div>
           <h2>Don't Already Have an Account?</h2>
-          <Link to="/signup">SIGN UP</Link>
+          <div className="nav-link-div">
+            <Link onClick={this.props.clearErrors} to="/signup">SIGN UP</Link>
+          </div>
         </div>
-      )
+      );
     } else {
+      this.state = {
+        first_name: '',
+        last_name: '',
+        username: '',
+        password: ''
+      };
       return(
         <div>
           <h2>Already Have an Account?</h2>
-          <Link to="/login">LOG IN</Link>
+          <div className="nav-link-div">
+            <Link onClick={this.props.clearErrors} to="/login">LOG IN</Link>
+          </div>
         </div>
-      )
+      );
+    }
+  }
+
+  formHeader() {
+    if (this.props.formType === 'login') {
+      return (<h1>Log Into Your Acount</h1>);
+    } else {
+      return(<h1>Create An Account</h1>);
+    }
+  }
+
+  formButton() {
+    if (this.props.formType === 'login') {
+      return(<input className="auth-form-button" type="submit" value="LOG IN" />);
+    } else {
+      return(<input className="auth-form-button" type="submit" value="SIGN UP" />);
+    }
+  }
+
+  formInputs() {
+    if (this.props.formType === 'login') {
+      return;
+    } else {
+      return(
+        <div>
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="create-user-input"
+            placeholder="First Name"
+          />
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="create-user-input"
+            placeholder="Last Name"
+          />
+          <br/><br/>
+        </div>
+      );
     }
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors){
+      return(
+        <ul className="errors">
+          {this.props.errors.map((error, i) => (
+            <div key={`error-${i}`}>
+              <li className="error" key={`error-${i}`}>
+                {error}
+              </li>
+              <br/>
+            </div>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {
-    if (this.props.formType === 'login') {
       return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            Log Into Your Acount
-            <br/>
-            {this.renderErrors()}
             <div className="login-form">
+            {this.formHeader()}
+            {this.renderErrors()}
+            {this.formInputs()}
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="login-input"
+                placeholder="Username"
+              />
+              <br/><br/>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+                placeholder="Password"
+              />
+              <br/><br/>
+              {this.formButton()}
               <br/>
-              <label>Username:
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-
-              <input type="submit" value="LOG IN" />
+              {this.navLink()}
             </div>
           </form>
-          {this.navLink()}
         </div>
       );
-    } else {
-      return (
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Create An Account
-            <br/>
-            {this.renderErrors()}
-            <div className="login-form">
-              <br/>
-              <label>Username:
-                <input type="text"
-                  value={this.state.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-              <br/>
 
-              <input type="submit" value="SIGN UP" />
-            </div>
-          </form>
-          {this.navLink()}
-        </div>
-      );
-    }
 
   }
 }
+
+// if (this.props.formType === 'login') {
+// } else {
+//   return (
+//     <div className="login-form-container">
+//       <form onSubmit={this.handleSubmit} className="login-form-box">
+//         <div className="login-form">
+//           <label>Create An Account</label>
+//           <br/>
+//           {this.renderErrors()}
+//           <label>Username:
+//             <input type="text"
+//               value={this.state.username}
+//               onChange={this.update('username')}
+//               className="login-input"
+//               placeholder="Username"
+//             />
+//           </label>
+//           <br/>
+//           <label>Password:
+//             <input type="password"
+//               value={this.state.password}
+//               onChange={this.update('password')}
+//               className="login-input"
+//               placeholder="Password"
+//             />
+//           </label>
+//           <br/>
+//
+//           <input type="submit" value="SIGN UP" />
+//           <br/>
+//           {this.navLink()}
+//
+//         </div>
+//       </form>
+//     </div>
+//   );
+// }
 
 export default withRouter(SessionForm);
