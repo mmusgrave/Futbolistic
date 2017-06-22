@@ -167,14 +167,19 @@ div {
 
 }
 
+.nav-bar-title {
+  padding-right: 10px;
+}
+
 .dropbtn {
     background-color: black;
     color: white;
-    padding-left: 16px;
+    padding: 0px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 40px;
 }
 
@@ -182,18 +187,20 @@ div {
 .dropdown {
     position: relative;
     display: inline-block;
+    text-align: center;
+    color: white;
+    list-style-type: none;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
+    display: none;
     position: absolute;
     background-color: white;
-    min-width: 160px;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     font-size: 12px;
-    width: 500px;
     padding-left: 0px;
 }
 
@@ -205,7 +212,7 @@ div {
     display: inline-block;
     font-size: 12px;
     height: 4px;
-    width: 115px;
+
 }
 
 /* Change color of dropdown links on hover */
@@ -227,22 +234,43 @@ div {
 .col_1 {
   height: 25px;
   padding-top: 3px;
-  /*padding-bottom: 7px;*/
+  padding-bottom: 7px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  text-align: center;
 }
 
 .drop-items {
-  padding: 3px;
   font-weight: bold;
   width: 110px;
   text-decoration: none;
   color: black;
+  display: block;
+  vertical-align: middle;
+  height: 30px;
+  line-height: 30px;
 }
 .drop-items:hover {
+  text-align: center;
+  vertical-align: bottom;
   background-color: black;
-  padding: 3px;
   font-weight: bold;
-  width: 110px;
   color: white;
+}
+
+.dropdown-right{
+  position: relative;
+  display: inline-block;
+}
+
+.drop-right {
+  left:auto;
+  right:-1px;
+  top:auto;
+}
+
+.drop-right:hover {
+  left:auto;
+  right:-1px;
+  top:auto;
 }
