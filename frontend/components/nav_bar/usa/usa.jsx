@@ -9,7 +9,7 @@ class USA extends React.Component {
 
   render() {
       return (
-            <div className="dropdown">
+            <div className="dropdown ">
               <button className="dropbtn">USA</button>
               <ul className="dropdown-content">
                 <li className="col_1">
