@@ -63,7 +63,11 @@ header {
   padding-left: 0px;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
+
 
 
 .flyout {
@@ -161,4 +165,84 @@ div {
 
 .header-group {
 
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding-left: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 110px;
+    height: 40px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 12px;
+    width: 500px;
+    padding-left: 0px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content < li < a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    height: 4px;
+    width: 115px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content < li < a:hover {
+  background-color: gray;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: white;
+    color: black;
+}
+
+.col_1 {
+  height: 25px;
+  padding-top: 3px;
+  /*padding-bottom: 7px;*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.drop-items {
+  padding: 3px;
+  font-weight: bold;
+  width: 110px;
+  text-decoration: none;
+  color: black;
+}
+.drop-items:hover {
+  background-color: black;
+  padding: 3px;
+  font-weight: bold;
+  width: 110px;
+  color: white;
 }

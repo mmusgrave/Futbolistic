@@ -10,6 +10,7 @@ import {
 
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -17,11 +18,7 @@ const App = () => {
   return (
     <div>
       <header>
-        <ul className="nav-bar-ul">
-          <li className="flyout">
-            <Link to="/" className="white-link">Futbolistic</Link>
-          </li>
-        </ul>
+        <NavBarContainer />
         <GreetingContainer />
       </header>
       <div className="content">

@@ -97,8 +97,8 @@ class SessionForm extends React.Component {
       return(
         <div>
         <ul className="name-errors">
-        {this.renderErrors("first_name")}
-        {this.renderErrors("last_name")}
+          {this.renderErrors("first_name")}
+          {this.renderErrors("last_name")}
         </ul>
           <input type="text"
             value={this.state.first_name}
