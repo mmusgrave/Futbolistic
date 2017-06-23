@@ -11,7 +11,7 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users`
+<!-- - `PATCH /api/users` -->
 - `GET /api/users/:id`
   -user home page
 

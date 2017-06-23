@@ -11,6 +11,7 @@ import {
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import StoryFormContainer from './story/story_form/story_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <GreetingContainer />
       </header>
       <div className="content">
+      <Route path="/" component={StoryFormContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       </div>

@@ -8,6 +8,9 @@ import {
   signup,
   logout
 } from './actions/session_actions';
+import {
+  createStory
+} from './actions/story_actions';
 
 //components
 import Root from './components/root';
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+  window.createStory = createStory;
   //for testing only
 
   const root = document.getElementById('root');

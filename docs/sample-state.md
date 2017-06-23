@@ -1,4 +1,6 @@
-```js
+js
+
+//USE SAMPLE STATE FROM PICTURE OF WHITEBOARD
 {
   currentUser: {
     id: 1,
