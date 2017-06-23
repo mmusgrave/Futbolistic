@@ -14,12 +14,12 @@ class StoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let post = {
+    let story = {
       title: this.state.title,
       body: this.state.body
     }
-    this.props.createStory(post).then( () => {
-      return this.props.history.push(`/posts`)
+    this.props.createStory(story).then( () => {
+      return this.props.history.push(`/`)
     });
   }
 
@@ -50,7 +50,14 @@ class StoryForm extends React.Component {
         <ul className="form-ul">
         <li className="li-body">
             <label>Body: </label>
-            <textarea rows="50" cols="150" form="story-form" placeholder="Enter text here"></textarea>
+            <textarea
+              rows="50"
+              cols="150"
+              value={this.state.body}
+              onChange={this.update('body')}
+              form="story-form"
+              placeholder="Enter text here">
+            </textarea>
             <br/>
           </li>
           </ul>

@@ -4,11 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       first_name: '',
       last_name: '',
       username: '',
-      password: ''
+      password: '',
+      // id:''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -37,7 +39,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    // debugger
+    this.props.processForm({user}).then( (user) => {
+      debugger
+      return this.props.history.push(`/user/${user.user.id}`)
+    });
   }
 
   navLink() {
@@ -119,6 +125,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(fieldName) {
+    // debugger
     const errors = this.props.errors[fieldName];
     if (errors){
       return(
@@ -138,6 +145,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    // debugger
       return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">

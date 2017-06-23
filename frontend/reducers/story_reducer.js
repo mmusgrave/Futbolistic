@@ -7,16 +7,9 @@ import {
 } from '../actions/story_actions';
 //
 const nullStory = Object.freeze({
-  author: null,
-  title: '',
-  body: '',
-  errors: {
-    // username: [],
-    // password:[],
-    // first_name: [],
-    // last_name: [],
-    // base: []
-  }
+  stories: {},
+  currentStory: {}//,
+  // errors: {}
 });
 
 const StoryReducer = (state = nullUser, action) => {
@@ -24,12 +17,12 @@ const StoryReducer = (state = nullUser, action) => {
   // debugger
   let currentState = merge({}, state);
   switch(action.type) {
-    // case RECEIVE_CURRENT_USER:
-    //   currentState.currentUser = action.currentUser;
-    //   return currentState;
-    
+    case RECEIVE_CURRENT_USER:
+      // currentState.stories = action.stories;
+      // return currentState;
     case RECEIVE_ERRORS:
-      currentState.errors = action.errors;
+      debugger
+      //currentState.errors = action.errors;
       return currentState;
     // case CLEAR_ERRORS:
     //   currentState.errors = {};
