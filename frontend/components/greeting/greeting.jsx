@@ -31,7 +31,14 @@ const personalGreeting = (currentUser, logout) => {
     <hgroup className="header-group">
       <ul className="nav-bar-ul">
         <li className="flyout">
-          <label className="header-name white-link">{currentUser.first_name}</label>
+          <div className="dropdown">
+            <Link to={`/users/${currentUser.id}`} className="dropbtn header-name white-link">{currentUser.first_name}</Link>
+            <ul className="dropdown-content">
+              <li className="col_1">
+                <a className="drop-items" href="#/story/new">Write a Story</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <li className="flyout">
           <button className="header-button white-link" onClick={logout}>Log Out</button>

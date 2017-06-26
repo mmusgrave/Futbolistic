@@ -1,9 +1,9 @@
-// export const fetchAllStories = () => {
-//   return $.ajax({
-//     method: 'GET',
-//     url: 'api/stories'
-//   });
-// };
+export const fetchAllStories = () => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/stories'
+  });
+};
 
 export const createStory = (story) => {
   return $.ajax({
@@ -13,12 +13,12 @@ export const createStory = (story) => {
   });
 };
 
-// export const fetchStory = (id) => {
-//   return $.ajax({
-//     method: 'GET',
-//     url: `/api/stories/${id}`
-//   });
-// };
+export const fetchStory = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/stories/${id}`
+  });
+};
 
 // export const deleteStory = (id) => {
 //   return $.ajax({

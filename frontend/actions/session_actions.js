@@ -1,4 +1,5 @@
-import * as APIUtil from '../util/session_api_util'
+import * as APIUtil from '../util/session_api_util';
+import {requestAllStories} from './story_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -42,8 +43,20 @@ export const login = user => dispatch => {
     return user;
   }, err => {
     return dispatch(receiveErrors(err.responseJSON));
-  })
+  });
 };
+// export const login = user => dispatch => {
+//   debugger
+//   return APIUtil.login(user).then(user => {
+//     debugger
+//     dispatch(receiveCurrentUser(user).then( (user) => {
+//       dispatch(requestAllStories());
+//       return user;
+//     }));
+//   }, err => {
+//     return dispatch(receiveErrors(err.responseJSON));
+//   });
+// };
 
 export const logout = () => dispatch => {
   debugger

@@ -4,7 +4,7 @@ import NavBar from './nav_bar';
 
 const mapStateToProps = () => {
   return {
-  }
+  };
 };
 
 const mapDispatchToProps = () => {

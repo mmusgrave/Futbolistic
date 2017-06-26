@@ -1,20 +1,20 @@
 import * as APIUtil from '../util/story_api_util';
 
-// export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES';
+export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES';
 // export const RECEIVE_SINGLE_STORY = 'RECEIVE_SINGLE_STORY';
 // export const REMOVE_STORY = 'REMOVE_STORY';
 // export const UPDATE_STORY = 'UPDATE_STORY';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-//
-// export const requestAllStories = () => (dispatch) => {
-//   return APIUtil.fetchAllStories()
-//     .then(stories => dispatch(receiveAllStories(stories)));
-// };
-//
+
+export const requestAllStories = () => (dispatch) => {
+  return APIUtil.fetchAllStories()
+    .then(stories => dispatch(receiveAllStories(stories)));
+};
+
 // export const requestSingleStory = (id) => (dispatch) => {
 //   // dispatch(startLoadingAllStories());
 //   return APIUtil.fetchStory(id).then( (story) => {
-//       dispatch(receiveSingleStory(story))
+//       dispatch(receiveSingleStory(story));
 //       return story;
 //     });
 // };
@@ -24,7 +24,7 @@ export const createStory = (story) => (dispatch) => {
     return APIUtil.createStory(story).then(story => {
       // dispatch(requestAllStories());
       return story;
-    })
+    });
 };
 
 //
@@ -48,14 +48,14 @@ export const receiveErrors = errors => {
   });
 };
 
-//
-// export const receiveAllStories = (stories) => {
-//   return {
-//     type: RECEIVE_ALL_STORIES,
-//     stories
-//   };
-// };
-//
+
+export const receiveAllStories = (stories) => {
+  return {
+    type: RECEIVE_ALL_STORIES,
+    stories
+  };
+};
+
 // export const receiveSingleStory = story => ({
 //   type: RECEIVE_SINGLE_STORY,
 //   story,
