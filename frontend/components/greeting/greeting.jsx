@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// export const logout = (e) => {
+  // debugger
+  // e.preventDefault();
+ // return logout();
+  // return this.props.history.push(`/`);
+  // return history.push(`/`);
+// }
+
 const sessionLinks = (clearErrors) => {
   return (
     <nav className="login-signup">
@@ -33,8 +41,10 @@ const personalGreeting = (currentUser, logout) => {
   );
 };
 
-const Greeting = ({ currentUser, logout, clearErrors }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks(clearErrors)
-);
+const Greeting = ({ currentUser, logout, clearErrors }) => {
+  debugger
+    return currentUser ? personalGreeting(currentUser, logout) : sessionLinks(clearErrors)
+
+};
 
 export default Greeting;

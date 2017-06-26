@@ -34,7 +34,7 @@ header {
   color: white;
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 60px;
 }
 
 .name-errors {
@@ -112,17 +112,27 @@ div {
   display: flex;
   justify-content: center;
   vertical-align: baseline;
-  width: 900px;
+  background-color: white;
+  height: 662px;
+  width: 972px;
+  margin-left: 55.6px;
+  margin-right: 55.6px;
 }
 
 .login-form-box {
   padding-top: 75px;
   padding-bottom: 100px;
-  background-color: white;
-  width: 900px;
+
+  width: 500px;
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.login-form {
+  /*display: flex;*/
+  /*justify-content: center;
+  flex-direction: row;*/
 }
 
 .header-button {
@@ -258,7 +268,35 @@ div {
   color: white;
 }
 
-.dropdown-right{
+.login-buttons {
+  margin: 0px;
+  width: 300px;
+  padding: 0px;
+  margin-left: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.guest-button {
+  background-color: white;
+  width: 90px;
+  height: 30px;
+  line-height: 33px;
+  margin: 0 auto;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  color: black;
+  font-size: 15px;
+  /*text-decoration: underline;*/
+  display: block
+}
+.guest-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*.dropdown-right{
   position: relative;
   display: inline-block;
 }
@@ -273,4 +311,4 @@ div {
   left: auto;
   right: -1px;
   top:auto;
-}
+}*/

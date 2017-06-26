@@ -16,7 +16,7 @@ export const signup = user => {
   // debugger
   return $.ajax({
     method: 'POST',
-    url: '/api/user',
+    url: '/api/users',
     data: user
   });
 };

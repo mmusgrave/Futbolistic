@@ -23,9 +23,9 @@ const App = () => {
         <GreetingContainer />
       </header>
       <div className="content">
-      <Route path="/story/new" component={StoryFormContainer} />
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+        <Route path="/story/new" component={StoryFormContainer} />
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
       </div>
     </div>
   );

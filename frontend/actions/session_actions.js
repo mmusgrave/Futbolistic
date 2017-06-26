@@ -8,7 +8,7 @@ export const receiveCurrentUser = user => {
   debugger
   return({
     type: RECEIVE_CURRENT_USER,
-    currentUser: user.user
+    currentUser: user
   });
 };
 
@@ -45,8 +45,11 @@ export const login = user => dispatch => {
   })
 };
 
-export const logout = () => dispatch => (
-  APIUtil.logout().then(user => (
-    dispatch(receiveCurrentUser({ user: null }))
-  ))
-);
+export const logout = () => dispatch => {
+  debugger
+  APIUtil.logout().then(user => {
+    debugger
+    return dispatch(receiveCurrentUser(null))
+  })
+
+};

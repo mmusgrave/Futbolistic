@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
       // id:''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
   componentDidMount() {
@@ -36,13 +37,29 @@ class SessionForm extends React.Component {
     });
   }
 
+  handleGuest(e) {
+    e.preventDefault();
+    const user = {
+      first_name: 'Guest',
+      last_name: 'Guest',
+      username: 'guest',
+      password: 'password',
+      // id:''
+    };
+    debugger
+    this.props.processForm({user}).then( (user) => {
+      debugger
+      return this.props.history.push(`/user/${user.id}`)
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    // debugger
+    debugger
     this.props.processForm({user}).then( (user) => {
       debugger
-      return this.props.history.push(`/user/${user.user.id}`)
+      return this.props.history.push(`/user/${user.id}`)
     });
   }
 
@@ -90,9 +107,20 @@ class SessionForm extends React.Component {
 
   formButton() {
     if (this.props.formType === 'login') {
-      return(<input className="auth-form-button" type="submit" value="LOG IN" />);
+      return(
+        <ul className="login-buttons">
+          <li>
+            <button className="guest-button" onClick={this.handleGuest} >Guest</button>
+          </li>
+          <li>
+            <input className="auth-form-button" type="submit" value="LOG IN"  />
+          </li>
+        </ul>
+      );
     } else {
-      return(<input className="auth-form-button" type="submit" value="SIGN UP" />);
+      return(
+        <input className="auth-form-button" type="submit" value="SIGN UP"
+      />);
     }
   }
 
@@ -125,7 +153,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(fieldName) {
-    // debugger
+    debugger
     const errors = this.props.errors[fieldName];
     if (errors){
       return(

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+// import { handleLogout } from './greeting'
 import Greeting from './greeting';
 
 const mapStateToProps = ({ session }) => ({
@@ -7,7 +8,14 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
+  // handleLogout: (e) => {
+  //   debugger
+  //   e.preventDefault();
+  //   logout();
+  //   return this.props.history.push(`/`);
+  // },
+  // handleLogout: () => handleLogout(),
+  logout: () => dispatch(logout())
 });
 
 export default connect(
