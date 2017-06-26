@@ -46,20 +46,20 @@ class SessionForm extends React.Component {
       password: 'password',
       // id:''
     };
-    debugger
+    // debugger
     this.props.processForm({user}).then( (user) => {
-      debugger
-      return this.props.history.push(`/user/${user.id}`)
+      // debugger
+      return this.props.history.push(`/user/${user.id}`);
     });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    debugger
+    // debugger
     this.props.processForm({user}).then( (user) => {
-      debugger
-      return this.props.history.push(`/user/${user.id}`)
+      // debugger
+      return this.props.history.push(`/user/${user.id}`);
     });
   }
 
@@ -153,7 +153,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(fieldName) {
-    debugger
+    // debugger
     const errors = this.props.errors[fieldName];
     if (errors){
       return(

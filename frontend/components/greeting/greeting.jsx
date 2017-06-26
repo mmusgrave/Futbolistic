@@ -26,7 +26,7 @@ const sessionLinks = (clearErrors) => {
 };
 
 const personalGreeting = (currentUser, logout) => {
-  debugger
+  // debugger
   return (
     <hgroup className="header-group">
       <ul className="nav-bar-ul">
@@ -49,7 +49,7 @@ const personalGreeting = (currentUser, logout) => {
 };
 
 const Greeting = ({ currentUser, logout, clearErrors }) => {
-  debugger
+  // debugger
     return currentUser ? personalGreeting(currentUser, logout) : sessionLinks(clearErrors)
 
 };

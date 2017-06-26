@@ -6,7 +6,7 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveCurrentUser = user => {
-  debugger
+  // debugger
   return({
     type: RECEIVE_CURRENT_USER,
     currentUser: user
@@ -36,9 +36,9 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => {
-  debugger
+  // debugger
   return APIUtil.login(user).then(user => {
-    debugger
+    // debugger
     dispatch(receiveCurrentUser(user));
     return user;
   }, err => {
@@ -59,10 +59,10 @@ export const login = user => dispatch => {
 // };
 
 export const logout = () => dispatch => {
-  debugger
+  // debugger
   APIUtil.logout().then(user => {
-    debugger
-    return dispatch(receiveCurrentUser(null))
-  })
+    // debugger
+    return dispatch(receiveCurrentUser(null));
+  });
 
 };

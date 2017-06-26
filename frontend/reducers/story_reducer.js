@@ -18,11 +18,11 @@ const StoryReducer = (state = nullStory, action) => {
   let currentState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      debugger
+      // debugger
       // currentState.stories = action.stories;
       return currentState;
     case RECEIVE_ERRORS:
-      debugger
+      // debugger
       //currentState.errors = action.errors;
       return currentState;
     // case CLEAR_ERRORS:

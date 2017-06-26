@@ -24,7 +24,7 @@ const App = () => {
       </header>
       <div className="content">
         <Route exact path="/story/new" component={StoryFormContainer} />
-        {/* <ProtectedRoute exact path='/users/:id' component={StoryFormContainer} /> */}
+        <ProtectedRoute exact path='/users/:id' component={StoryFormContainer} />
         <AuthRoute exact path="/login" component={SessionFormContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
       </div>
