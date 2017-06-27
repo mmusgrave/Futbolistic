@@ -16,18 +16,18 @@ const nullStory = Object.freeze({
 
 const StoryReducer = (state = nullStory, action) => {
   Object.freeze(state);
-  debugger
+  // debugger
   let currentState = merge({}, state, nullStory);
   switch(action.type) {
     case RECEIVE_ALL_STORIES:
-      debugger
+      // debugger
       currentState.stories = action.stories.stories;
-      debugger
+      // debugger
       return currentState;
     case RECEIVE_SINGLE_STORY:
-      debugger
+      // debugger
       currentState.currentStory = action.story;
-      debugger
+      // debugger
       return currentState;
     case RECEIVE_CURRENT_USER:
       // debugger

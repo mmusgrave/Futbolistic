@@ -50,7 +50,7 @@ export const receiveErrors = errors => {
 
 
 export const receiveAllStories = (stories) => {
-  debugger
+  // debugger
   return {
     type: RECEIVE_ALL_STORIES,
     stories

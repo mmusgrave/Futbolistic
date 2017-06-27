@@ -1,5 +1,5 @@
 export const fetchAllStories = () => {
-  debugger
+  // debugger
   return $.ajax({
     method: 'GET',
     url: 'api/stories'

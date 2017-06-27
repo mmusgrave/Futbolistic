@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 class StoryShow extends React.Component {
   componentDidMount() {
     // this.props.requestSingleStory(this.props.match.params.storyId);
-    debugger
+    // debugger
     this.props.requestAllStories();
   }
 
