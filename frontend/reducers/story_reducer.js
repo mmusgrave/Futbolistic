@@ -1,10 +1,11 @@
 import merge from 'lodash/merge';
 //
 import {
+  RECEIVE_ALL_STORIES,
   RECEIVE_CURRENT_USER,
 //   CLEAR_ERRORS,
   RECEIVE_ERRORS
-} from '../actions/session_actions';
+} from '../actions/story_actions';
 //
 const nullStory = Object.freeze({
   stories: {},
@@ -14,9 +15,14 @@ const nullStory = Object.freeze({
 
 const StoryReducer = (state = nullStory, action) => {
   Object.freeze(state);
-  // debugger
-  let currentState = merge({}, state);
+  debugger
+  let currentState = merge({}, state, nullStory);
   switch(action.type) {
+    case RECEIVE_ALL_STORIES:
+      debugger
+      currentState.stories = action.stories.stories;
+      debugger
+      return currentState;
     case RECEIVE_CURRENT_USER:
       // debugger
       // currentState.stories = action.stories;

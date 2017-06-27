@@ -12,6 +12,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import StoryFormContainer from './story/story_form/story_form_container';
+import StoryIndexContainer from './story/story_index/story_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
       </header>
       <div className="content">
         <Route exact path="/story/new" component={StoryFormContainer} />
-        <ProtectedRoute exact path='/users/:id' component={StoryFormContainer} />
+        <Route path='/users/:id' component={StoryIndexContainer} />
         <AuthRoute exact path="/login" component={SessionFormContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
       </div>

@@ -41,7 +41,7 @@ const personalGreeting = (currentUser, logout) => {
           </div>
         </li>
         <li className="flyout">
-          <button className="header-button white-link" onClick={logout}>Log Out</button>
+          <Link to={`/`} className="header-button white-link" onClick={logout}>Log Out</Link>
         </li>
       </ul>
     </hgroup>
