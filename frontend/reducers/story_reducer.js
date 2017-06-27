@@ -2,6 +2,7 @@ import merge from 'lodash/merge';
 //
 import {
   RECEIVE_ALL_STORIES,
+  RECEIVE_SINGLE_STORY,
   RECEIVE_CURRENT_USER,
 //   CLEAR_ERRORS,
   RECEIVE_ERRORS
@@ -21,6 +22,11 @@ const StoryReducer = (state = nullStory, action) => {
     case RECEIVE_ALL_STORIES:
       debugger
       currentState.stories = action.stories.stories;
+      debugger
+      return currentState;
+    case RECEIVE_SINGLE_STORY:
+      debugger
+      currentState.currentStory = action.story;
       debugger
       return currentState;
     case RECEIVE_CURRENT_USER:

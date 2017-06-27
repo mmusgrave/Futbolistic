@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/story_api_util';
 
 export const RECEIVE_ALL_STORIES = 'RECEIVE_ALL_STORIES';
-// export const RECEIVE_SINGLE_STORY = 'RECEIVE_SINGLE_STORY';
+export const RECEIVE_SINGLE_STORY = 'RECEIVE_SINGLE_STORY';
 // export const REMOVE_STORY = 'REMOVE_STORY';
 // export const UPDATE_STORY = 'UPDATE_STORY';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
@@ -11,13 +11,13 @@ export const requestAllStories = () => (dispatch) => {
     .then(stories => dispatch(receiveAllStories(stories)));
 };
 
-// export const requestSingleStory = (id) => (dispatch) => {
-//   // dispatch(startLoadingAllStories());
-//   return APIUtil.fetchStory(id).then( (story) => {
-//       dispatch(receiveSingleStory(story));
-//       return story;
-//     });
-// };
+export const requestSingleStory = (id) => (dispatch) => {
+  // dispatch(startLoadingAllStories());
+  return APIUtil.fetchStory(id).then( (story) => {
+      dispatch(receiveSingleStory(story));
+      return story;
+    });
+};
 
 
 export const createStory = (story) => (dispatch) => {
@@ -57,10 +57,10 @@ export const receiveAllStories = (stories) => {
   };
 };
 
-// export const receiveSingleStory = story => ({
-//   type: RECEIVE_SINGLE_STORY,
-//   story,
-// });
+export const receiveSingleStory = story => ({
+  type: RECEIVE_SINGLE_STORY,
+  story,
+});
 //
 // export const removeStory = story => {
 //   return({

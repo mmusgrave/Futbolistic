@@ -111,6 +111,7 @@ class SessionForm extends React.Component {
         <ul className="login-buttons">
           <li>
             <button className="guest-button" onClick={this.handleGuest} >Guest</button>
+            <Link to="/users/1`" className="guest-button" onClick={this.handleGuest} >Guest</Link>
           </li>
           <li>
             <input className="auth-form-button" type="submit" value="LOG IN"  />
