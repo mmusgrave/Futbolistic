@@ -6,3 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 guest = User.create!({ username: "guest", password: "password", first_name: "Guest", last_name: "Guest" })
+
+ # Comment.create!({body: "France are lame", author_id: 2, story_id: 6})

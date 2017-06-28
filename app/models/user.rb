@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  first_name      :string
+#  last_name       :string
+#
+
 class User < ActiveRecord::Base
   attr_reader :password
 
@@ -14,6 +28,11 @@ class User < ActiveRecord::Base
   has_many :stories,
     class_name: "Story",
     foreign_key: :author_id,
+    primary_key: :id
+
+  has_many :comments,
+    class_name: "Comment",
+    foreign_key: :comment_id,
     primary_key: :id
 
 	def password= password
