@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import StoryShow from './story_show';
 import {
   requestSingleStory,
-  requestAllStories
+  requestAllStories,
+  deleteStory
 } from '../../../actions/story_actions';
 // import { selectSingleStory } from '../reducers/selectors';
 // import { selectAllStories } from '../reducers/selectors';
@@ -20,7 +21,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     // requestAllStories: () => dispatch(requestAllStories()),
-    requestSingleStory: id => dispatch(requestSingleStory(id))
+    requestSingleStory: id => dispatch(requestSingleStory(id)),
+    destroyStory: (post) => dispatch(deleteStory(post))
   }
 };
 

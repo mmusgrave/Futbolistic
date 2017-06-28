@@ -22,13 +22,13 @@ export const fetchStory = (id) => {
   });
 };
 
-// export const deleteStory = (id) => {
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: `api/stories/${id}`,
-//     data: { id }
-//   });
-// };
+export const deleteStory = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/stories/${id}`,
+    data: { id }
+  });
+};
 
 export const updateStory = (story) =>{
   debugger
