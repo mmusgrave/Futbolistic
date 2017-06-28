@@ -328,3 +328,7 @@ div {
   display: flex;
   justify-content: center;
 }
+
+.show-title {
+  background-color: white;
+}

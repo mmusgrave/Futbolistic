@@ -4,13 +4,14 @@ import {
   RECEIVE_ALL_STORIES,
   RECEIVE_SINGLE_STORY,
   RECEIVE_CURRENT_USER,
+  UPDATE_STORY,
 //   CLEAR_ERRORS,
   RECEIVE_ERRORS
 } from '../actions/story_actions';
 //
 const nullStory = Object.freeze({
   stories: {},
-  currentStory: {}//,
+  currentStory: null//,
   // errors: {}
 });
 
@@ -25,9 +26,16 @@ const StoryReducer = (state = nullStory, action) => {
       // debugger
       return currentState;
     case RECEIVE_SINGLE_STORY:
-      // debugger
+      debugger
       currentState.currentStory = action.story;
-      // debugger
+      debugger
+      return currentState;
+
+    case UPDATE_STORY:
+      debugger
+      //maybe update current user in here
+
+
       return currentState;
     case RECEIVE_CURRENT_USER:
       // debugger

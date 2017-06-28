@@ -8,16 +8,19 @@ import {
 // import { selectAllStories } from '../reducers/selectors';
 
 const mapStateToProps = (state) => {
+  debugger
   return({
-    // posts: state.posts.posts,
-    // post: state.posts.posts[state.posts.currentStory]
+    // posts: state.stories,
+    user: state.session.currentUser,
+    story: state.stories.currentStory
+    // story: state.stories.currentStory
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     // requestAllStories: () => dispatch(requestAllStories()),
-    // requestSingleStory: post => dispatch(requestSingleStory(post))
+    requestSingleStory: id => dispatch(requestSingleStory(id))
   }
 };
 

@@ -15,6 +15,7 @@ export const createStory = (story) => {
 };
 
 export const fetchStory = (id) => {
+  debugger
   return $.ajax({
     method: 'GET',
     url: `/api/stories/${id}`
@@ -29,15 +30,16 @@ export const fetchStory = (id) => {
 //   });
 // };
 
-// export const updateStory = (story) =>{
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `api/stories/${story.story.id}`,
-//     data: {
-//       story: {
-//         title: story.story.title,
-//         body: story.story.body
-//       }
-//     }
-//   });
-// };
+export const updateStory = (story) =>{
+  debugger
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/stories/${story.story.id}`,
+    data: {
+      story: {
+        title: story.story.title,
+        body: story.story.body
+      }
+    }
+  });
+};

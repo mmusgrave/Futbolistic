@@ -13,7 +13,9 @@ export const requestAllStories = () => (dispatch) => {
 
 export const requestSingleStory = (id) => (dispatch) => {
   // dispatch(startLoadingAllStories());
+  debugger
   return APIUtil.fetchStory(id).then( (story) => {
+    debugger
       dispatch(receiveSingleStory(story));
       return story;
     });
@@ -34,11 +36,15 @@ export const createStory = (story) => (dispatch) => {
 //   })
 // };
 //
-// export const editStory = (story) => (dispatch) => {
-//   return APIUtil.updateStory(story).then(story => {
-//     dispatch(requestAllStories());
-//   })
-// };
+export const editStory = (story) => (dispatch) => {
+  debugger
+  return APIUtil.updateStory(story).then(story => {
+    debugger
+    dispatch(requestSingleStory(story.id));
+    return dispatch(requestAllStories());
+    // return story;
+  })
+};
 
 export const receiveErrors = errors => {
 
@@ -57,10 +63,14 @@ export const receiveAllStories = (stories) => {
   };
 };
 
-export const receiveSingleStory = story => ({
-  type: RECEIVE_SINGLE_STORY,
-  story,
-});
+export const receiveSingleStory = story => {
+  debugger
+  return {
+    type: RECEIVE_SINGLE_STORY,
+    story,
+  };
+};
+
 //
 // export const removeStory = story => {
 //   return({
@@ -69,9 +79,9 @@ export const receiveSingleStory = story => ({
 //   })
 // };
 //
-// export const updateStory = story => {
-//   return({
-//     type: UPDATE_STORY,
-//     story
-//   })
-// };
+export const updateStory = story => {
+  return({
+    type: UPDATE_STORY,
+    story
+  })
+};
