@@ -5,12 +5,23 @@ export const fetchAllStories = () => {
     url: 'api/stories'
   });
 };
+//
+// export const createStory = (story) => {
+//   return $.ajax({
+//     method: 'POST',
+//     url: '/api/stories',
+//     data: { story }
+//   });
+// };
 
 export const createStory = (story) => {
+  debugger
   return $.ajax({
     method: 'POST',
     url: '/api/stories',
-    data: { story }
+    contentType: false,
+    processData: false,
+    data: story
   });
 };
 

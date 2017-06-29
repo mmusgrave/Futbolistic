@@ -16,8 +16,9 @@ export const requestSingleStory = (id) => (dispatch) => {
   debugger
   return APIUtil.fetchStory(id).then( (story) => {
     debugger
-      dispatch(receiveSingleStory(story));
-      return story;
+      return dispatch(receiveSingleStory(story));
+      // debugger
+      // return story;
     });
 };
 
@@ -67,7 +68,7 @@ export const receiveSingleStory = story => {
   debugger
   return {
     type: RECEIVE_SINGLE_STORY,
-    story,
+    story
   };
 };
 

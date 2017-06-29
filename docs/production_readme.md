@@ -13,8 +13,6 @@ Futbolistic live NB: This should be a link to your production site
 
 Features & Implementation
 
-NB: don't copy and paste any of this. Many folks will implement similar features, and many employers will see the READMEs of a lot of a/A grads. You must write in a way that distinguishes your README from that of other students', but use this as a guide for what topics to cover.
-
 Feeds
 
 Feeds will be indexes of stories. There will be a GeneralFeedContainer for the user that displays on their homepage, and is a feed containing articles from subscribed topics, articles from followed authors, articles authored by the user, and articles bookmarked by the user.

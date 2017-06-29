@@ -9,17 +9,29 @@ import {
 // import { selectAllStories } from '../reducers/selectors';
 
 const mapStateToProps = (state) => {
+
+  debugger
+  let newComments = {};
+  if (state.stories.currentStory && state.stories.currentStory.comments.length > 0) {
+    newComments = {};
+    debugger
+    state.stories.currentStory.comments.forEach( (id) => {
+      newComments[parseInt(id)] = state.comments.comments[parseInt(id)];
+    });
+    debugger
+  }
   debugger
   return({
     // posts: state.stories,
     user: state.session.currentUser,
-    story: state.stories.currentStory
-    // story: state.stories.currentStory
+    story: state.stories.currentStory,
+    comments: newComments
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    // requestAllStories: () => dispatch(requestAllStories()),
     // requestAllStories: () => dispatch(requestAllStories()),
     requestSingleStory: id => dispatch(requestSingleStory(id)),
     destroyStory: (post) => dispatch(deleteStory(post))

@@ -12,7 +12,10 @@ import {
   createStory
 } from './actions/story_actions';
 import {
-  receiveAllComments
+  receiveAllComments,
+  createComment,
+  deleteComment,
+  editComment
 } from './actions/comment_actions';
 
 import {fetchAllComments} from './util/comment_api_util';
@@ -44,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createStory = createStory;
   window.receiveAllComments = receiveAllComments;
   window.fetchAllComments = fetchAllComments;
+  window.createComment = createComment;
+  window.deleteComment = deleteComment;
+  window.editComment = editComment;
   //for testing only
 
   const root = document.getElementById('root');

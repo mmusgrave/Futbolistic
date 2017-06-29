@@ -6,13 +6,13 @@ export const fetchAllComments = () => {
   });
 };
 //
-// export const createStory = (story) => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: '/api/stories',
-//     data: { story }
-//   });
-// };
+export const createComment = (comment) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/comments',
+    data: { comment }
+  });
+};
 //
 // export const fetchStory = (id) => {
 //   debugger
@@ -22,13 +22,13 @@ export const fetchAllComments = () => {
 //   });
 // };
 //
-// export const deleteStory = (id) => {
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: `api/stories/${id}`,
-//     data: { id }
-//   });
-// };
+export const deleteComment = (id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/comments/${id}`,
+    data: { id }
+  });
+};
 //
 // export const updateStory = (story) =>{
 //   debugger

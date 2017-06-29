@@ -6,21 +6,49 @@ class StoryForm extends React.Component {
     super(props);
     this.state = {
       body: '',
-      title: ''
+      title: '',
+      imageFile: null,
+      imageUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
 
+  }
+
+  updateFile(e) {
+    e.preventDefault();
+    // debugger
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ imageFile:file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let story = {
-      title: this.state.title,
-      body: this.state.body
+    var formData = new FormData();
+    formData.append("story[title]", this.state.title);
+    formData.append("story[body]", this.state.body);
+    if (this.state.imageFile){
+      formData.append("story[image]", this.state.imageFile);
     }
-    this.props.createStory(story).then( () => {
+    // let story = {
+    //   title: this.state.title,
+    //   body: this.state.body,
+    //   image: this.state.imageFile,
+    // }
+    debugger
+    this.props.createStory(formData).then( () => {
       return this.props.history.push(`/`)
     });
+    // this.props.createStory(story).then( () => {
+    //   return this.props.history.push(`/`)
+    // });
   }
 
   update(property) {
@@ -47,6 +75,17 @@ class StoryForm extends React.Component {
             <br/>
             </li>
         </ul>
+        <ul className="form-ul">
+         <li className="li-body">
+           <label>Main Image: </label>
+             <input
+               type="file"
+               onChange={this.updateFile}
+             />
+             <img src={this.state.imageUrl}/>
+             <br/>
+             </li>
+         </ul>
         <ul className="form-ul">
         <li className="li-body">
             <label>Body: </label>

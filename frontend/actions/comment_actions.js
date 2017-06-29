@@ -1,10 +1,12 @@
 import * as APIUtil from '../util/comment_api_util';
+import { requestSingleStory } from './story_actions';
 //
 export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
 // export const RECEIVE_SINGLE_STORY = 'RECEIVE_SINGLE_STORY';
-// export const REMOVE_STORY = 'REMOVE_STORY';
-// // export const UPDATE_STORY = 'UPDATE_STORY';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 // export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+
 //
 export const requestAllComments = () => (dispatch) => {
   return APIUtil.fetchAllComments()
@@ -22,29 +24,32 @@ export const requestAllComments = () => (dispatch) => {
 // };
 //
 //
-// export const createStory = (story) => (dispatch) => {
-//     return APIUtil.createStory(story).then(story => {
-//       // dispatch(requestAllStories());
-//       return story;
-//     });
-// };
+export const createComment = (comment) => (dispatch) => {
+    return APIUtil.createComment(comment).then(comment => {
+      // dispatch(requestSingleComment(comment.id));
+      debugger
+      return dispatch(requestSingleStory(comment.story.id));
+      // return comment;
+    });
+};
 //
 //
-// export const deleteStory = (story) => (dispatch) => {
-//   return APIUtil.deleteStory(story).then(story => {
-//     dispatch(removeStory(story));
-//   })
-// };
+export const deleteComment = (comment) => (dispatch) => {
+  return APIUtil.deleteComment(comment).then(comment => {
+    return dispatch(removeComment(comment));
+  })
+};
 //
-// export const editStory = (story) => (dispatch) => {
-//   debugger
-//   return APIUtil.updateStory(story).then(story => {
-//     debugger
-//     dispatch(requestSingleStory(story.id));
-//     return dispatch(requestAllStories());
-//     // return story;
-//   })
-// };
+export const editComment = (comment) => (dispatch) => {
+  debugger
+  return APIUtil.updateComment(comment).then(comment => {
+    debugger
+    return dispatch(requestSingleComment(comment.id));
+    // dispatch(requestSingleStory(comment.story_id));
+    // return dispatch(requestAllComments());
+    // return comment;
+  })
+};
 //
 // export const receiveErrors = errors => {
 //
@@ -72,16 +77,16 @@ export const receiveAllComments = (comments) => {
 // };
 //
 //
-// export const removeStory = story => {
-//   return({
-//     type: REMOVE_STORY,
-//     story
-//   })
-// };
+export const removeComment = comment => {
+  return({
+    type: REMOVE_COMMENT,
+    comment
+  })
+};
 //
-// export const updateStory = story => {
-//   return({
-//     type: UPDATE_STORY,
-//     story
-//   })
-// };
+export const updateComment = comment => {
+  return({
+    type: UPDATE_COMMENT,
+    comment
+  })
+};

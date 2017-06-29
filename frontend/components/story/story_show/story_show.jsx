@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import {values } from 'lodash';
 
 class StoryShow extends React.Component {
   // componentDidMount() {
@@ -86,6 +87,46 @@ class StoryShow extends React.Component {
     }
   }
 
+  imageRender() {
+    const story = this.props.story;
+    debugger
+    if (story.image_url !== "/images/original/missing.png"){
+      return ( <img src={story.image_url}/> );
+    } else {
+      return ( <div> </div>)
+    }
+  }
+
+  comments(){
+    debugger
+    if (this.props.story){
+      
+      var comment_ids = values(this.props.story.comments);
+      debugger
+      var comments = comment_ids.map( (id) => {
+        debugger
+          return(
+            <li key={parseInt(id)}>
+              <p>{this.props.comments[parseInt(id)].body}</p>
+              <p>from {this.props.comments[parseInt(id)].author.first_name} {this.props.comments[parseInt(id)].author.last_name}</p>
+              <br/>
+            </li>
+          );
+      });
+      debugger
+      return (
+        <div className="comments">
+          <ul>
+            <br/>
+            <h4>COMMENTS</h4>
+            {comments}
+          </ul>
+        </div>
+      );
+
+    }
+  }
+
   render() {
     debugger
     const story = this.props.story;
@@ -94,7 +135,8 @@ class StoryShow extends React.Component {
     if (story){
       return (
           <div className="show-title">
-          <h1 >  ufyfjyfjfj</h1>
+
+          {this.imageRender()}
             <ul className="show-ul">
               <li className="li-body">
                 <h1 className="title">{story.title}</h1>
@@ -108,6 +150,7 @@ class StoryShow extends React.Component {
             </ul>
             {this.editButton()}
             {this.deleteButton()}
+            {this.comments()}
           </div>
       );
     } else {
