@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    @comments = comment.all
+    @comments = Comment.all
   end
   #
   def show
@@ -18,26 +18,26 @@ class Api::CommentsController < ApplicationController
       render json: @comment.errors.messages, status: 422
     end
   end
+
+  def update
+    @comment = Comment.find(params[:id])
+
+    if @comment.update(comment_params)
+      render :show
+    else
+      render json: @comment.errors.messages, status: 422
+    end
+  end
   #
-  # def update
-  #   @story = Story.find(params[:id])
-  #
-  #   if @story.update(story_params)
-  #     render :show
-  #   else
-  #     render json: @story.errors.messages, status: 422
-  #   end
-  # end
-  #
-  # def destroy
-  #   @story = Story.find(params[:id])
-  #
-  #   if @story.destroy
-  #     render :show
-  #   else
-  #     render json: @story.errors.messages, status: 422
-  #   end
-  # end
+  def destroy
+    @comment = Comment.find(params[:id])
+
+    if @comment.destroy
+      render :show
+    else
+      render json: @comment.errors.messages, status: 422
+    end
+  end
 
   private
 

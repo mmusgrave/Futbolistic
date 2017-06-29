@@ -11,6 +11,11 @@ import {
 import {
   createStory
 } from './actions/story_actions';
+import {
+  receiveAllComments
+} from './actions/comment_actions';
+
+import {fetchAllComments} from './util/comment_api_util';
 
 //components
 import Root from './components/root';
@@ -37,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = logout;
   window.signup = signup;
   window.createStory = createStory;
+  window.receiveAllComments = receiveAllComments;
+  window.fetchAllComments = fetchAllComments;
   //for testing only
 
   const root = document.getElementById('root');
