@@ -13,7 +13,6 @@ class SouthAmerica extends React.Component {
               <button className="dropbtn">South America</button>
               <ul className="dropdown-content">
                 <li className="col_1">
-                  <a className="drop-items" href="#">Argentina</a>
                   <Link to="/topics/6" className="drop-items">South America</Link>
                   <Link to="/topics/34" className="drop-items">Argentina</Link>
                   <a className="drop-items" href="#">Bolivia</a>
