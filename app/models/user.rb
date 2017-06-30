@@ -35,6 +35,19 @@ class User < ActiveRecord::Base
     foreign_key: :comment_id,
     primary_key: :id
 
+  has_many :subscriptions,
+    class_name: "Subscription",
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :subscribed_topics,
+    through: :subscriptions,
+    source: :topic
+
+  has_many :subscribed_stories,
+    through: :subscribed_topics,
+    source: :stories
+
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)
 		@password = password

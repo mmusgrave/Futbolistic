@@ -12,6 +12,9 @@ import {
   createStory
 } from './actions/story_actions';
 import {
+  requestSingleTopic
+} from './actions/topic_actions';
+import {
   receiveAllComments,
   createComment,
   deleteComment,
@@ -19,6 +22,7 @@ import {
 } from './actions/comment_actions';
 
 import {fetchAllComments} from './util/comment_api_util';
+import {fetchTopic} from './util/topic_api_util';
 
 //components
 import Root from './components/root';
@@ -50,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createComment = createComment;
   window.deleteComment = deleteComment;
   window.editComment = editComment;
+  window.fetchTopic = fetchTopic;
+  window.requestSingleTopic = requestSingleTopic;
   //for testing only
 
   const root = document.getElementById('root');

@@ -15,6 +15,8 @@ import StoryFormContainer from './story/story_form/story_form_container';
 import StoryIndexContainer from './story/story_index/story_index_container';
 import StoryShowContainer from './story/story_show/story_show_container';
 import StoryEditContainer from './story/story_edit/story_edit_container';
+import TopicShowContainer from './topic/topic_show_container';
+import SubscriptionFeedContainer from './subscription_feed/subscription_feed_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -27,8 +29,10 @@ const App = () => {
       </header>
       <div className="content">
         <ProtectedRoute exact path="/story/new" component={StoryFormContainer} />
+        <Route exact path="/users/:id" component={SubscriptionFeedContainer} />
         <Route exact path='/' component={StoryIndexContainer} />
         <Route exact path='/stories/:id' component={StoryShowContainer} />
+        <Route exact path='/topics/:id' component={TopicShowContainer} />
         <ProtectedRoute exact path='/stories/:id/edit' component={StoryEditContainer} />
         <AuthRoute exact path="/login" component={SessionFormContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />

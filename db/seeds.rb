@@ -19,7 +19,7 @@ ronaldo = User.create!({ username: "cr7", password: "password", first_name: "Cri
 dele = User.create!({ username: "dele", password: "Tottenham", first_name: "Dele", last_name: "Alli" })
 musgrave = User.create!({ username: "mmusgrave", password: "password", first_name: "Michael", last_name: "Musgrave" })
 
-zidane_story1 = Story.create!({ title: "Real Madrid", body: words, author_id: zidane.id })
+zidane_story1 = Story.create!({ title: "Real Madrid vs Atletico", body: words, author_id: zidane.id })
 zidane_story2 = Story.create!({ title: "France", body: words, author_id: zidane.id })
 zidane_story3 = Story.create!({ title: "Juventus", body: words, author_id: zidane.id })
 zidane_story4 = Story.create!({ title: "Marseille", body: words, author_id: zidane.id })
@@ -49,7 +49,7 @@ dele_story5 = Story.create!({ title: "Los Angeles Galaxy", body: words, author_i
 musgrave_story1 = Story.create!({ title: "Real Madrid", body: words, author_id: musgrave.id })
 musgrave_story2 = Story.create!({ title: "France", body: words, author_id: musgrave.id })
 musgrave_story3 = Story.create!({ title: "Juventus", body: words, author_id: musgrave.id })
-musgrave_story4 = Story.create!({ title: "Marseille", body: words, author_id: musgrave.id })
+musgrave_story4 = Story.create!({ title: "Manchester United", body: words, author_id: musgrave.id })
 musgrave_story5 = Story.create!({ title: "Monaco", body: words, author_id: musgrave.id })
 
 comment_words_1 = "Great Article!"
@@ -149,6 +149,35 @@ usa2 = Topic.create!({ topic_name: "USA 2", parent_topic_id: usa.id })
 usa3 = Topic.create!({ topic_name: "USA 3", parent_topic_id: usa.id })
 usa4 = Topic.create!({ topic_name: "USA 4", parent_topic_id: usa.id })
 usa5 = Topic.create!({ topic_name: "USA 5", parent_topic_id: usa.id })
+
+tagging1 = Tagging.create!({ topic_id: spain1.id, story_id: beckham_story1.id })
+tagging2 = Tagging.create!({ topic_id: spain1.id, story_id: ronaldo_story1.id })
+tagging3 = Tagging.create!({ topic_id: spain1.id, story_id: musgrave_story1.id })
+tagging4 = Tagging.create!({ topic_id: spain1.id, story_id: zidane_story1.id })
+tagging5 = Tagging.create!({ topic_id: spain2.id, story_id: zidane_story1.id })
+
+tagging6 = Tagging.create!({ topic_id: england1.id, story_id: beckham_story2.id })
+tagging7 = Tagging.create!({ topic_id: england1.id, story_id: ronaldo_story2.id })
+tagging8 = Tagging.create!({ topic_id: england1.id, story_id: musgrave_story4.id })
+
+
+subscription1 = Subscription.create!({ topic_id: spain1.id, user_id: zidane.id })
+subscription2 = Subscription.create!({ topic_id: spain1.id, user_id: beckham.id })
+subscription3 = Subscription.create!({ topic_id: spain1.id, user_id: messi.id })
+subscription4 = Subscription.create!({ topic_id: spain1.id, user_id: ronaldo.id })
+
+
+subscription5 = Subscription.create!({ topic_id: spain2.id, user_id: zidane.id })
+subscription6 = Subscription.create!({ topic_id: spain2.id, user_id: beckham.id })
+subscription7 = Subscription.create!({ topic_id: spain2.id, user_id: messi.id })
+subscription8 = Subscription.create!({ topic_id: spain2.id, user_id: ronaldo.id })
+
+subscription9 = Subscription.create!({ topic_id: england1.id, user_id: zidane.id })
+subscription10 = Subscription.create!({ topic_id: england1.id, user_id: beckham.id })
+subscription11 = Subscription.create!({ topic_id: england1.id, user_id: messi.id })
+subscription12 = Subscription.create!({ topic_id: england1.id, user_id: ronaldo.id })
+subscription13 = Subscription.create!({ topic_id: england1.id, user_id: musgrave.id })
+subscription14 = Subscription.create!({ topic_id: spain1.id, user_id: musgrave.id })
 
 # spain = Topic.create!({ topic_name: "Spain", parent_topic_id: nil })
 # germany = Topic.create!({ topic_name: "Germany", parent_topic_id: nil })

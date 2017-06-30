@@ -30,4 +30,17 @@ class Story < ActiveRecord::Base
     foreign_key: :story_id,
     primary_key: :id
 
+  has_many  :taggings,
+    class_name: "Tagging",
+    foreign_key: :story_id,
+    primary_key: :id
+
+  has_many :tagged_topics,
+    through: :taggings,
+    source: :topic
+
+    has_many :subscribed_users,
+      through: :tagged_topics,
+      source: :subscribed_users
+
 end

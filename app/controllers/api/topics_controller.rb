@@ -4,6 +4,7 @@ class Api::TopicsController < ApplicationController
     end
 
     def show
+      # debugger
       @topic = Topic.find(params[:id])
     end
 

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
    resources :comments
    resources :stories, only: [:index, :create, :destroy, :update, :show]
    resources :topics, only: [:index, :show, :create]
+   resources :taggings, only: [:index, :show, :create, :destroy]
+   resources :subscriptions, only: [:index, :show, :create, :destroy]
   #  resources :stories, except: [:edit, :new]
  end
 

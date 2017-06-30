@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import {requestSingleTopic} from '../../../actions/topic_actions';
 
 class Spain extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleLink = this.handleLink.bind(this);
+  }
+
+  handleLink(e){
+    // debugger
+    dispatch(requestSingleTopic(e.currentTarget.value));
   }
 
   render() {
@@ -13,11 +20,11 @@ class Spain extends React.Component {
               <button className="dropbtn">Spain</button>
               <ul className="dropdown-content">
                 <li className="col_1">
-                  <a className="drop-items" href="#">All of Spain</a>
+                <Link to={`/topics/${1}`} value="1" onClick={this.handleLink} className="drop-items">All of Spain</Link>
                   <a className="drop-items" href="#">National Team</a>
                   <a className="drop-items" href="#">Alavés </a>
                   <a className="drop-items" href="#">Athletic Club</a>
-                  <a className="drop-items" href="#">Atlético Madrid</a>
+                  <Link to={`/topics/${10}`} value="10" onClick={this.handleLink} className="drop-items">Atlético Madrid</Link>
                 </li>
                 <li className="col_1">
                   <a className="drop-items" href="#">Barcelona</a>
@@ -41,7 +48,7 @@ class Spain extends React.Component {
                   <a className="drop-items" href="#">Real Betis</a>
                 </li>
                 <li className="col_1">
-                  <a className="drop-items" href="#">Real Madrid</a>
+                  <Link to={`/topics/${9}`} value="9" onClick={this.handleLink} className="drop-items">Real Madrid</Link>
                   <a className="drop-items" href="#">Real Oviedo</a>
                   <a className="drop-items" href="#">Real Zaragoza</a>
                   <a className="drop-items" href="#">Real Sociedad</a>
@@ -61,4 +68,4 @@ class Spain extends React.Component {
 
 }
 
-export default Spain;
+export default withRouter(Spain);

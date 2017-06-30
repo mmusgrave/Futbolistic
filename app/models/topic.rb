@@ -11,7 +11,7 @@
 
 class Topic < ActiveRecord::Base
   validates :topic_name, presence: true
-  
+
   belongs_to :parent_topic,
     class_name: "Topic",
     foreign_key: :parent_topic_id,
@@ -21,5 +21,23 @@ class Topic < ActiveRecord::Base
     class_name: "Topic",
     foreign_key: :parent_topic_id,
     primary_key: :id
+
+    has_many :taggings,
+      class_name: "Tagging",
+      foreign_key: :topic_id,
+      primary_key: :id
+
+    has_many :subscriptions,
+      class_name: "Subscription",
+      foreign_key: :topic_id,
+      primary_key: :id
+
+    has_many :subscribed_users,
+      through: :subscriptions,
+      source: :subscriber
+
+    has_many :stories,
+      through: :taggings,
+      source: :story
 
 end

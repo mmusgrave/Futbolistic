@@ -1,16 +1,20 @@
-json.stories do
-  @stories.each do |story|
+json.topics @topics.each do |topic|
   # json.partial! 'story', story: story
 
   # json.author story.author, :first_name, :last_name
-  json.set! story.id do
-    json.extract! story, :id, :title
 
-    json.author story.author, :id, :first_name, :last_name
+  json.extract! topic, :id, :topic_name
 
-    json.image_url asset_path(story.image.url)
+  if topic.parent_topic then
+    json.parent_topic topic.parent_topic, :id, :topic_name
+
+  else
+    json.parent_topic nil
   end
-  # json.comments story.comments.each do |comment|
+
+  # json.image_url asset_path(story.image.url)
+
+  # json.stories story.comments.each do |comment|
   #   # json.comment comment, :id, :body,
   #   # json.set! author, :id, :first_name, :last_name
   #   # # json comment.author :id, :first_name, :last_name
@@ -24,5 +28,5 @@ json.stories do
   #     end
   #   end
   # end
-  end
+
 end
