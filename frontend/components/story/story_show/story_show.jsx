@@ -7,12 +7,12 @@ import CommentFormContainer from '../../comment/comment_form/comment_form_contai
 class StoryShow extends React.Component {
   // componentDidMount() {
   //   // this.props.requestSingleStory(this.props.match.params.storyId);
-  //   // 
+  //   //
   //   // this.props.requestAllStories();
   // }
 
   // componentWillMount() {
-  //   
+  //
   //   this.props.requestSingleStory();
   // }
 
@@ -23,14 +23,14 @@ class StoryShow extends React.Component {
   }
 
   componentDidMount() {
-    
+
 
     this.props.requestSingleStory(parseInt(this.props.match.params.id));
     // this.props.requestAllStories();
   }
 
   editButton() {
-    
+
     const user = this.props.user;
     const story = this.props.story;
     if (user && user.id === story.author.id){
@@ -43,7 +43,7 @@ class StoryShow extends React.Component {
   }
 
   deleteButton() {
-    
+
     const user = this.props.user;
     const story = this.props.story;
     if (user && user.id === story.author.id){
@@ -60,11 +60,11 @@ class StoryShow extends React.Component {
 
   handleDelete(e){
     e.preventDefault();
-    
+
     const story = e.currentTarget.value;
     this.props.destroyStory(story)
       .then(action => {
-        
+
         return this.props.history.push("/");
       });
   }
@@ -93,7 +93,7 @@ class StoryShow extends React.Component {
 
   imageRender() {
     const story = this.props.story;
-    
+
     if (story.image_url !== "/images/original/missing.png"){
       return ( <img src={story.image_url}/> );
     } else {
@@ -111,11 +111,11 @@ class StoryShow extends React.Component {
 
   handleCommentDelete(e){
     e.preventDefault();
-    
+
     const comment = e.currentTarget.value;
     this.props.destroyComment(comment)
       .then(action => {
-        
+
         return this.props.history.push(`/stories/${this.props.story.id}`);
       });
   }
@@ -125,7 +125,6 @@ class StoryShow extends React.Component {
       if (author_id === this.props.user.id) {
         return (
           <div>
-            <Link to="/">EDIT</Link>
             <button className="delete-button" onClick={this.handleCommentDelete} value={comment_id}>Delete</button>
           </div>
         );
@@ -140,13 +139,13 @@ class StoryShow extends React.Component {
   }
 
   comments(){
-    
+
     if (this.props.story){
 
       var comment_ids = values(this.props.story.comments);
-      
+
       var comments = comment_ids.map( (id) => {
-        
+
           return(
             <li key={parseInt(id)}>
               <p>{this.props.comments[parseInt(id)].body}</p>
@@ -157,7 +156,7 @@ class StoryShow extends React.Component {
           );
       });
 
-      
+
       return (
         <div className="comments">
           <ul>
@@ -173,10 +172,10 @@ class StoryShow extends React.Component {
   }
 
   render() {
-    
+
     const story = this.props.story;
     // const story = this.props.requestSingleStory(parseInt(this.props.match.params.id));
-    
+
     if (story){
       return (
           <div className="show-title">
