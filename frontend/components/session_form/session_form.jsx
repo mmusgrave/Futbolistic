@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    //
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillUnmount() {
-    // debugger
+    //
     this.props.clearErrors();
   }
 
@@ -46,9 +46,9 @@ class SessionForm extends React.Component {
       password: 'password',
       // id:''
     };
-    // debugger
+    //
     this.props.processForm({user}).then( (user) => {
-      // debugger
+      //
       return this.props.history.push(`/user/${user.id}`);
     });
   }
@@ -56,10 +56,10 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    // debugger
+    //
     this.props.processForm({user}).then( (user) => {
-      // debugger
-      return this.props.history.push(`/user/${user.id}`);
+      //
+      return this.props.history.push(`/users/${user.id}`);
     });
   }
 
@@ -153,7 +153,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(fieldName) {
-    // debugger
+    //
     const errors = this.props.errors[fieldName];
     if (errors){
       return(
@@ -173,7 +173,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    // debugger
+    //
       return (
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">

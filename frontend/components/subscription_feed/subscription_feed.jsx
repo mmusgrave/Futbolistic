@@ -10,11 +10,11 @@ class SubscriptionFeed extends React.Component {
 
   constructor(props){
     super(props);
-    debugger
+
     // this.handleDelete = this.handleDelete.bind(this);
   }
   componentWillMount() {
-    debugger
+
     // this.props.requestSingleTopic(parseInt(this.props.match.params.id));
   }
   //
@@ -29,10 +29,10 @@ class SubscriptionFeed extends React.Component {
 //   // }
 //
   render() {
-    // debugger;
+    // ;
     // const stories = this.props.stories;
     // const storyList =  stories.map(story => {
-    //   // debugger
+    //   //
     //     if (story.author.id === 1){
     //         return (
     //           <li key={story.id}>
@@ -52,41 +52,60 @@ class SubscriptionFeed extends React.Component {
     //
     //   }
     // );
-    // debugger;
+    // ;
     // this.props.requestSingleTopic(parseInt(this.props.match.params.id));
     // const topic = this.props.currentTopic
-    // if (topic){
+    if (this.props.stories){
     //   // if (this.props.currentTopic.id === parseInt(this.props.match.params.id)){
     //
-    //     const storiesArray = this.props.currentTopic.stories;
-    //     const stories = this.props.stories;
-    //     const storiesDisplay = []
-    //     debugger
-    //     storiesArray.forEach( (story) => {
-    //       // storiesArray.push(story);
-    //       debugger
-    //       storiesDisplay.push(
-    //         <li key={parseInt(story)}>
-    //           <Link to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
-    //           <h4>by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
-    //         </li>
-    //       );
-    //     });
-    //     debugger
-    //     return (
-    //       <div className="index-div">
-    //       <h1>{this.props.currentTopic.topic_name}</h1>
-    //         <ul>
-    //           {storiesDisplay}
-    //         </ul>
-    //       </div>
-    //     );
+        const stories = this.props.stories;
+        const storiesArray = Object.keys(stories);
+
+        const storiesDisplay = []
+
+        storiesArray.forEach( (story) => {
+          // storiesArray.push(story);
+          //
+          storiesDisplay.push(
+            <li key={parseInt(story)}>
+              <Link to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
+              <h4>by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+            </li>
+          );
+        });
+        const topics = this.props.topics;
+        const topicsArray = Object.keys(topics);
+
+        const topicsDisplay = []
+
+        topicsArray.forEach( (topic) => {
+          // topicsArray.push(story);
+          //
+          topicsDisplay.push(
+            <li key={parseInt(topic)}>
+              <Link to={`/topics/${parseInt(topic)}`}>{topics[parseInt(topic)].topic_name}</Link>
+            </li>
+          );
+        });
+        //
+        return (
+          <div className="index-div">
+          <h1>Subscribed Stories</h1>
+            <ul>
+              {storiesDisplay}
+            </ul>
+          <h1>Subscribed Topics</h1>
+            <ul>
+              {topicsDisplay}
+            </ul>
+          </div>
+        );
     //   // } else {
     //   //     return(<div></div>);
     //   // }
-    // }else{
+    }else{
       return(<div className="index-div">SUBSCRIPTIONS</div>);
-    // }
+    }
     // <ul className="title-ul">
     //   <li>
     //     <h1>All Stories</h1>

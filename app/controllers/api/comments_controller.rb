@@ -8,7 +8,7 @@ class Api::CommentsController < ApplicationController
   end
   #
   def create
-    # debugger
+    # 
 
     @comment = Comment.new(comment_params.merge({ author_id: current_user.id }))
 

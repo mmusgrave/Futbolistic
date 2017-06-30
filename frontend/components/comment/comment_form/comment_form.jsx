@@ -18,12 +18,12 @@ class CommentForm extends React.Component {
       body: this.state.body,
       story_id: this.props.storyId
     }
-    debugger
+    
     // this.state.body = "";
     this.setState({ ['body']: '' })
     this.props.createComment(comment).then( () => {
       //figure out how to make this redirect to the story page again
-      debugger
+      
       // this.props.resetForm();
       return this.props.history.push(`/stories/${comment.story_id}`)
     });
@@ -34,7 +34,7 @@ class CommentForm extends React.Component {
  }
 
  render() {
-   debugger
+   
    return (
      <form  id="story-form" className="create-form" onSubmit={this.handleSubmit}>
        <ul className="form-ul">

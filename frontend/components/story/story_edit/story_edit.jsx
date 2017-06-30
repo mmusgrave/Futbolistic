@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class StoryEdit extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+    
     this.state = {
       body: '',
       title: '',
@@ -14,14 +14,14 @@ class StoryEdit extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
     this.props.requestSingleStory(parseInt(this.props.match.params.id));
     // this.props.requestAllStories();
   }
 
 
   componentWillReceiveProps(){
-    debugger
+    
     if (this.props.story){
       this.state = {
         body: this.props.story.body,
@@ -41,7 +41,7 @@ class StoryEdit extends React.Component {
       }
     }
     this.props.editStory(story).then( (stories) => {
-      debugger
+      
       return this.props.history.push(`/stories/${story.story.id}`);
       // return this.props.history.push('/')
     });

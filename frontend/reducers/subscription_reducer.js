@@ -20,12 +20,12 @@ const nullFeed = Object.freeze({
 
 const SubscriptionReducer = (state = nullFeed, action) => {
   Object.freeze(state);
-  debugger
+
   // let currentState = merge({}, state, nullStory);
   let currentState = merge({}, state);
   switch(action.type) {
     // case RECEIVE_SINGLE_TOPIC:
-    //   debugger
+    //
     //   // currentState.currentTopic = action.topic;
     //
     //   let fakeTopic = {
@@ -33,14 +33,14 @@ const SubscriptionReducer = (state = nullFeed, action) => {
     //     topic_name: action.topic.topic_name,
     //     id: action.topic.id
     //   }
-    //   debugger
+    //
     //   if (action.topic.stories){
     //     // if (action.story.comments.length > 0)
     //       fakeTopic.stories = Object.keys(action.topic.stories)
-    //       debugger
+    //
     //   } else {
     //     fakeTopic.stories = []
-    //     debugger
+    //
     //   }
     //   let newState = merge({}, state, {
     //     currentTopic: fakeTopic
@@ -52,7 +52,7 @@ const SubscriptionReducer = (state = nullFeed, action) => {
     //   currentState.topics = action.story.tagged_topics;
     //   return currentState;
     case RECEIVE_CURRENT_USER:
-    debugger
+
       if (action.currentUser){
         currentState.topics = action.currentUser.subscribed_topics;
         currentState.stories = action.currentUser.subscribed_stories;

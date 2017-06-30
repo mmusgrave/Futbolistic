@@ -8,7 +8,7 @@ class Api::SubscriptionsController < ApplicationController
   end
 
   def create
-    # debugger
+    # 
 
     @subscription = Subscription.new(subscription_params.merge({ user_id: current_user.id }))
 

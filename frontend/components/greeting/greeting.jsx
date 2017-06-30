@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // export const logout = (e) => {
-  // debugger
+  // 
   // e.preventDefault();
  // return logout();
   // return this.props.history.push(`/`);
@@ -26,7 +26,7 @@ const sessionLinks = (clearErrors) => {
 };
 
 const personalGreeting = (currentUser, logout) => {
-  // debugger
+  // 
   return (
     <hgroup className="header-group">
       <ul className="nav-bar-ul">
@@ -49,7 +49,7 @@ const personalGreeting = (currentUser, logout) => {
 };
 
 const Greeting = ({ currentUser, logout, clearErrors }) => {
-  // debugger
+  // 
     return currentUser ? personalGreeting(currentUser, logout) : sessionLinks(clearErrors)
 
 };

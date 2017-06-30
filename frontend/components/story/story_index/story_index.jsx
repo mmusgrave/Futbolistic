@@ -12,7 +12,7 @@ class StoryIndex extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
-    // debugger
+    // 
     this.props.requestAllStories();
   }
 
@@ -26,10 +26,10 @@ class StoryIndex extends React.Component {
   }
 
   render() {
-    // debugger;
+    // ;
     const stories = this.props.stories;
     const storyList =  stories.map(story => {
-      // debugger
+      // 
         if (story.author.id === 1){
             return (
               <li key={story.id}>
@@ -49,7 +49,7 @@ class StoryIndex extends React.Component {
 
       }
     );
-    // debugger;
+    // ;
     return (
       <div className="index-div">
         <ul className="title-ul">

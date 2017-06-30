@@ -11,6 +11,7 @@ words = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet
 Curabitur vestibulum arcu eu diam congue, nec porttitor nulla maximus. Donec id scelerisque elit. Nulla turpis arcu, imperdiet at vehicula sed, fringilla ut quam. Nunc vel ornare lectus. Curabitur faucibus enim eget ipsum accumsan convallis. Integer luctus interdum magna sit amet imperdiet. Duis eros libero, rutrum in ullamcorper eu, tempor nec lectus. Morbi pretium felis nec ante commodo, in dignissim enim sodales. Etiam tincidunt euismod risus, ac cursus mauris fermentum sit amet. In mi turpis, vehicula sed magna sit amet, molestie mattis nulla. Maecenas iaculis nulla non sem pretium, eu consequat arcu interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec viverra justo eget dolor ullamcorper maximus. Aenean ultrices libero sagittis urna volutpat vulputate. Vivamus ullamcorper sem quis maximus mollis.
 
 Maecenas feugiat neque non diam maximus dapibus. Sed aliquam nisl vel dolor feugiat rutrum. Nullam dapibus porta neque sit amet vehicula. Cras vitae massa ut tortor volutpat porta congue in libero. Sed viverra suscipit ante at pretium. Nunc iaculis ultricies purus et tempor. Pellentesque sagittis dolor non tortor commodo egestas."
+User.destroyAll!
 guest = User.create!({ username: "guest", password: "password", first_name: "Guest", last_name: "Guest" })
 zidane = User.create!({ username: "zizou", password: "password", first_name: "Zinedine", last_name: "Zidane" })
 beckham = User.create!({ username: "becks", password: "password", first_name: "David", last_name: "Beckham" })
@@ -19,6 +20,7 @@ ronaldo = User.create!({ username: "cr7", password: "password", first_name: "Cri
 dele = User.create!({ username: "dele", password: "Tottenham", first_name: "Dele", last_name: "Alli" })
 musgrave = User.create!({ username: "mmusgrave", password: "password", first_name: "Michael", last_name: "Musgrave" })
 
+Story.destroyAll!
 zidane_story1 = Story.create!({ title: "Real Madrid vs Atletico", body: words, author_id: zidane.id })
 zidane_story2 = Story.create!({ title: "France", body: words, author_id: zidane.id })
 zidane_story3 = Story.create!({ title: "Juventus", body: words, author_id: zidane.id })
@@ -56,7 +58,7 @@ comment_words_1 = "Great Article!"
 comment_words_2 = "THIS WAS AWFUL!!!!!!"
 comment_words_3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet erat accumsan, euismod quam nec, pellentesque orci. In nec ex sapien. Mauris imperdiet venenatis odio eget fringilla. Quisque dictum felis ut consectetur suscipit. Duis accumsan risus in porta aliquet. Proin lobortis felis vel tortor tempus ultricies. Donec condimentum ante ac justo varius, vitae venenatis urna ornare. Nunc sagittis neque non massa lobortis aliquam. Class aptent taciti sociosqu ad litora torquent"
 
-
+Comment.destroyAll!
 zidane_comment1 = Comment.create!({ author_id: zidane.id, story_id: zidane_story1.id , body: comment_words_1})
 zidane_comment2 = Comment.create!({ author_id: zidane.id, story_id: zidane_story2.id, body: comment_words_1})
 zidane_comment3 = Comment.create!({ author_id: zidane.id, story_id: zidane_story3.id, body: comment_words_1})
@@ -93,17 +95,18 @@ musgrave_comment5 = Comment.create!({ author_id: musgrave.id, story_id: zidane_s
 
  # Comment.create!({body: "France are lame", author_id: 2, story_id: 6})
 
-spain = Topic.create!({ topic_name: "Spain", parent_topic_id: nil })
+Topic.destroyAll!
+spain = Topic.create!({ topic_name: "All of Spain", parent_topic_id: nil })
 germany = Topic.create!({ topic_name: "Germany", parent_topic_id: nil })
 italy = Topic.create!({ topic_name: "Italy", parent_topic_id: nil })
 france = Topic.create!({ topic_name: "France", parent_topic_id: nil })
-england = Topic.create!({ topic_name: "England", parent_topic_id: nil })
+england = Topic.create!({ topic_name: "All of England", parent_topic_id: nil })
 south_america = Topic.create!({ topic_name: "South America", parent_topic_id: nil })
 europe = Topic.create!({ topic_name: "Europe", parent_topic_id: nil })
 usa = Topic.create!({ topic_name: "USA", parent_topic_id: nil })
 
-spain1 = Topic.create!({ topic_name: "Spain 1", parent_topic_id: spain.id })
-spain2 = Topic.create!({ topic_name: "Spain 2", parent_topic_id: spain.id })
+spain1 = Topic.create!({ topic_name: "Real Madrid", parent_topic_id: spain.id })
+spain2 = Topic.create!({ topic_name: "Atlético Madrid", parent_topic_id: spain.id })
 spain3 = Topic.create!({ topic_name: "Spain 3", parent_topic_id: spain.id })
 spain4 = Topic.create!({ topic_name: "Spain 4", parent_topic_id: spain.id })
 spain5 = Topic.create!({ topic_name: "Spain 5", parent_topic_id: spain.id })
@@ -126,7 +129,7 @@ france3 = Topic.create!({ topic_name: "France 3", parent_topic_id: france.id })
 france4 = Topic.create!({ topic_name: "France 4", parent_topic_id: france.id })
 france5 = Topic.create!({ topic_name: "France 5", parent_topic_id: france.id })
 
-england1 = Topic.create!({ topic_name: "England 1", parent_topic_id: england.id })
+england1 = Topic.create!({ topic_name: "Manchester United", parent_topic_id: england.id })
 england2 = Topic.create!({ topic_name: "England 2", parent_topic_id: england.id })
 england3 = Topic.create!({ topic_name: "England 3", parent_topic_id: england.id })
 england4 = Topic.create!({ topic_name: "England 4", parent_topic_id: england.id })
@@ -150,6 +153,8 @@ usa3 = Topic.create!({ topic_name: "USA 3", parent_topic_id: usa.id })
 usa4 = Topic.create!({ topic_name: "USA 4", parent_topic_id: usa.id })
 usa5 = Topic.create!({ topic_name: "USA 5", parent_topic_id: usa.id })
 
+
+Tagging.destroyAll!
 tagging1 = Tagging.create!({ topic_id: spain1.id, story_id: beckham_story1.id })
 tagging2 = Tagging.create!({ topic_id: spain1.id, story_id: ronaldo_story1.id })
 tagging3 = Tagging.create!({ topic_id: spain1.id, story_id: musgrave_story1.id })
@@ -161,6 +166,7 @@ tagging7 = Tagging.create!({ topic_id: england1.id, story_id: ronaldo_story2.id 
 tagging8 = Tagging.create!({ topic_id: england1.id, story_id: musgrave_story4.id })
 
 
+Subscription.destroyAll!
 subscription1 = Subscription.create!({ topic_id: spain1.id, user_id: zidane.id })
 subscription2 = Subscription.create!({ topic_id: spain1.id, user_id: beckham.id })
 subscription3 = Subscription.create!({ topic_id: spain1.id, user_id: messi.id })

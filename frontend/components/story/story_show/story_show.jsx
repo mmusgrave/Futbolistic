@@ -7,12 +7,12 @@ import CommentFormContainer from '../../comment/comment_form/comment_form_contai
 class StoryShow extends React.Component {
   // componentDidMount() {
   //   // this.props.requestSingleStory(this.props.match.params.storyId);
-  //   // debugger
+  //   // 
   //   // this.props.requestAllStories();
   // }
 
   // componentWillMount() {
-  //   debugger
+  //   
   //   this.props.requestSingleStory();
   // }
 
@@ -23,14 +23,14 @@ class StoryShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    
 
     this.props.requestSingleStory(parseInt(this.props.match.params.id));
     // this.props.requestAllStories();
   }
 
   editButton() {
-    debugger
+    
     const user = this.props.user;
     const story = this.props.story;
     if (user && user.id === story.author.id){
@@ -43,7 +43,7 @@ class StoryShow extends React.Component {
   }
 
   deleteButton() {
-    debugger
+    
     const user = this.props.user;
     const story = this.props.story;
     if (user && user.id === story.author.id){
@@ -60,11 +60,11 @@ class StoryShow extends React.Component {
 
   handleDelete(e){
     e.preventDefault();
-    debugger
+    
     const story = e.currentTarget.value;
     this.props.destroyStory(story)
       .then(action => {
-        debugger
+        
         return this.props.history.push("/");
       });
   }
@@ -93,7 +93,7 @@ class StoryShow extends React.Component {
 
   imageRender() {
     const story = this.props.story;
-    debugger
+    
     if (story.image_url !== "/images/original/missing.png"){
       return ( <img src={story.image_url}/> );
     } else {
@@ -111,11 +111,11 @@ class StoryShow extends React.Component {
 
   handleCommentDelete(e){
     e.preventDefault();
-    debugger
+    
     const comment = e.currentTarget.value;
     this.props.destroyComment(comment)
       .then(action => {
-        debugger
+        
         return this.props.history.push(`/stories/${this.props.story.id}`);
       });
   }
@@ -140,13 +140,13 @@ class StoryShow extends React.Component {
   }
 
   comments(){
-    debugger
+    
     if (this.props.story){
 
       var comment_ids = values(this.props.story.comments);
-      debugger
+      
       var comments = comment_ids.map( (id) => {
-        debugger
+        
           return(
             <li key={parseInt(id)}>
               <p>{this.props.comments[parseInt(id)].body}</p>
@@ -157,7 +157,7 @@ class StoryShow extends React.Component {
           );
       });
 
-      debugger
+      
       return (
         <div className="comments">
           <ul>
@@ -173,10 +173,10 @@ class StoryShow extends React.Component {
   }
 
   render() {
-    debugger
+    
     const story = this.props.story;
     // const story = this.props.requestSingleStory(parseInt(this.props.match.params.id));
-    debugger
+    
     if (story){
       return (
           <div className="show-title">

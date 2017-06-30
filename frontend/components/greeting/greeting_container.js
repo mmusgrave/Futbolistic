@@ -9,7 +9,7 @@ const mapStateToProps = ({ session }) => ({
 
 const mapDispatchToProps = dispatch => ({
   // handleLogout: (e) => {
-  //   debugger
+  //   
   //   e.preventDefault();
   //   logout();
   //   return this.props.history.push(`/`);

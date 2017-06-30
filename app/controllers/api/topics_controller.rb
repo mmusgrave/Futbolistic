@@ -4,12 +4,12 @@ class Api::TopicsController < ApplicationController
     end
 
     def show
-      # debugger
+      # 
       @topic = Topic.find(params[:id])
     end
 
     def create
-      # debugger
+      # 
 
       @topic = Topic.new(topic_params)
 

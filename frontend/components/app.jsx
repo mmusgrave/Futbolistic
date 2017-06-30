@@ -20,7 +20,7 @@ import SubscriptionFeedContainer from './subscription_feed/subscription_feed_con
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
-  // debugger
+  //
   return (
     <div>
       <header>

@@ -1,7 +1,5 @@
-//React
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 
 import {
   login,
@@ -43,19 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //For testing only
-  window.getState = store.getState;
-  window.dispatch = store.dispatch; // just for testing!
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
-  window.createStory = createStory;
-  window.receiveAllComments = receiveAllComments;
-  window.fetchAllComments = fetchAllComments;
-  window.createComment = createComment;
-  window.deleteComment = deleteComment;
-  window.editComment = editComment;
-  window.fetchTopic = fetchTopic;
-  window.requestSingleTopic = requestSingleTopic;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch; // just for testing!
+  // window.login = login;
+  // window.logout = logout;
+  // window.signup = signup;
+  // window.createStory = createStory;
+  // window.receiveAllComments = receiveAllComments;
+  // window.fetchAllComments = fetchAllComments;
+  // window.createComment = createComment;
+  // window.deleteComment = deleteComment;
+  // window.editComment = editComment;
+  // window.fetchTopic = fetchTopic;
+  // window.requestSingleTopic = requestSingleTopic;
   //for testing only
 
   const root = document.getElementById('root');

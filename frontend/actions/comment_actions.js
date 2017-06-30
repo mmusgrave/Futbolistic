@@ -15,9 +15,9 @@ export const requestAllComments = () => (dispatch) => {
 //
 // export const requestSingleStory = (id) => (dispatch) => {
 //   // dispatch(startLoadingAllStories());
-//   debugger
+//   
 //   return APIUtil.fetchStory(id).then( (story) => {
-//     debugger
+//     
 //       dispatch(receiveSingleStory(story));
 //       return story;
 //     });
@@ -27,7 +27,7 @@ export const requestAllComments = () => (dispatch) => {
 export const createComment = (comment) => (dispatch) => {
     return APIUtil.createComment(comment).then(comment => {
       // dispatch(requestSingleComment(comment.id));
-      debugger
+      
       return dispatch(requestSingleStory(comment.story.id));
       // return comment;
     });
@@ -41,9 +41,9 @@ export const deleteComment = (comment) => (dispatch) => {
 };
 //
 export const editComment = (comment) => (dispatch) => {
-  debugger
+  
   return APIUtil.updateComment(comment).then(comment => {
-    debugger
+    
     // return dispatch(requestSingleComment(comment.id));
     return dispatch(requestSingleStory(comment.story.id));
     // return dispatch(requestAllComments());
@@ -61,7 +61,7 @@ export const editComment = (comment) => (dispatch) => {
 //
 //
 export const receiveAllComments = (comments) => {
-  // debugger
+  // 
   return {
     type: RECEIVE_ALL_COMMENTS,
     comments
@@ -69,7 +69,7 @@ export const receiveAllComments = (comments) => {
 };
 //
 // export const receiveSingleStory = story => {
-//   debugger
+//   
 //   return {
 //     type: RECEIVE_SINGLE_STORY,
 //     story,

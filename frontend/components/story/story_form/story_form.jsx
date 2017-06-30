@@ -17,7 +17,7 @@ class StoryForm extends React.Component {
 
   updateFile(e) {
     e.preventDefault();
-    // debugger
+    // 
     var file = e.currentTarget.files[0];
     var fileReader = new FileReader();
     fileReader.onloadend = function () {
@@ -42,7 +42,7 @@ class StoryForm extends React.Component {
     //   body: this.state.body,
     //   image: this.state.imageFile,
     // }
-    debugger
+    
     this.props.createStory(formData).then( () => {
       return this.props.history.push(`/`)
     });

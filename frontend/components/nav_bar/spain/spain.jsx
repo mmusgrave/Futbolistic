@@ -6,13 +6,9 @@ class Spain extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleLink = this.handleLink.bind(this);
+
   }
 
-  handleLink(e){
-    // debugger
-    dispatch(requestSingleTopic(e.currentTarget.value));
-  }
 
   render() {
       return (
@@ -20,11 +16,11 @@ class Spain extends React.Component {
               <button className="dropbtn">Spain</button>
               <ul className="dropdown-content">
                 <li className="col_1">
-                <Link to={`/topics/${1}`} value="1" onClick={this.handleLink} className="drop-items">All of Spain</Link>
+                <Link to={`/topics/${1}`} value="1" className="drop-items">All of Spain</Link>
                   <a className="drop-items" href="#">National Team</a>
                   <a className="drop-items" href="#">Alavés </a>
                   <a className="drop-items" href="#">Athletic Club</a>
-                  <Link to={`/topics/${10}`} value="10" onClick={this.handleLink} className="drop-items">Atlético Madrid</Link>
+                  <Link to={`/topics/${10}`} value="10" className="drop-items">Atlético Madrid</Link>
                 </li>
                 <li className="col_1">
                   <a className="drop-items" href="#">Barcelona</a>
@@ -48,7 +44,7 @@ class Spain extends React.Component {
                   <a className="drop-items" href="#">Real Betis</a>
                 </li>
                 <li className="col_1">
-                  <Link to={`/topics/${9}`} value="9" onClick={this.handleLink} className="drop-items">Real Madrid</Link>
+                  <Link to={`/topics/${9}`} value="9"  className="drop-items">Real Madrid</Link>
                   <a className="drop-items" href="#">Real Oviedo</a>
                   <a className="drop-items" href="#">Real Zaragoza</a>
                   <a className="drop-items" href="#">Real Sociedad</a>

@@ -1,5 +1,5 @@
 export const fetchAllStories = () => {
-  // debugger
+  // 
   return $.ajax({
     method: 'GET',
     url: 'api/stories'
@@ -15,7 +15,7 @@ export const fetchAllStories = () => {
 // };
 
 export const createStory = (story) => {
-  debugger
+  
   return $.ajax({
     method: 'POST',
     url: '/api/stories',
@@ -26,7 +26,7 @@ export const createStory = (story) => {
 };
 
 export const fetchStory = (id) => {
-  debugger
+  
   return $.ajax({
     method: 'GET',
     url: `/api/stories/${id}`
@@ -42,7 +42,7 @@ export const deleteStory = (id) => {
 };
 
 export const updateStory = (story) =>{
-  debugger
+  
   return $.ajax({
     method: 'PATCH',
     url: `api/stories/${story.story.id}`,

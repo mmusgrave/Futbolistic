@@ -13,17 +13,17 @@ import {
 
 const mapStateToProps = (state) => {
 
-  debugger
+  
   let newComments = {};
   if (state.stories.currentStory && state.stories.currentStory.comments.length > 0) {
     newComments = {};
-    debugger
+    
     state.stories.currentStory.comments.forEach( (id) => {
       newComments[parseInt(id)] = state.comments.comments[parseInt(id)];
     });
-    debugger
+    
   }
-  debugger
+  
   return({
     // posts: state.stories,
     user: state.session.currentUser,

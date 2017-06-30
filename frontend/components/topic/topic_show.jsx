@@ -10,11 +10,11 @@ class TopicShow extends React.Component {
 
   constructor(props){
     super(props);
-    debugger
+
     // this.handleDelete = this.handleDelete.bind(this);
   }
-  componentWillMount() {
-    debugger
+  componentDidMount() {
+
     this.props.requestSingleTopic(parseInt(this.props.match.params.id));
   }
 
@@ -40,10 +40,10 @@ class TopicShow extends React.Component {
   // }
 
   render() {
-    // debugger;
+    // ;
     // const stories = this.props.stories;
     // const storyList =  stories.map(story => {
-    //   // debugger
+    //   //
     //     if (story.author.id === 1){
     //         return (
     //           <li key={story.id}>
@@ -63,8 +63,9 @@ class TopicShow extends React.Component {
     //
     //   }
     // );
-    // debugger;
+    // ;
     // this.props.requestSingleTopic(parseInt(this.props.match.params.id));
+    
     const topic = this.props.currentTopic;
     if (topic && topic.id === parseInt(this.props.match.params.id)){
       // if (this.props.currentTopic.id === parseInt(this.props.match.params.id)){
@@ -72,10 +73,10 @@ class TopicShow extends React.Component {
         const storiesArray = this.props.currentTopic.stories;
         const stories = this.props.stories;
         const storiesDisplay = []
-        debugger
+        //
         storiesArray.forEach( (story) => {
           // storiesArray.push(story);
-          debugger
+          //
           storiesDisplay.push(
             <li key={parseInt(story)}>
               <Link to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
@@ -83,7 +84,7 @@ class TopicShow extends React.Component {
             </li>
           );
         });
-        debugger
+
         return (
           <div className="index-div">
           <h1>{this.props.currentTopic.topic_name}</h1>

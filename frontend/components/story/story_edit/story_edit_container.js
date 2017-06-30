@@ -7,7 +7,7 @@ import {
 } from '../../../actions/story_actions';
 
 const mapStateToProps = (state) => {
-  debugger
+  
   return({
     // stories: state.stories.stories,
     story: state.stories.currentStory,

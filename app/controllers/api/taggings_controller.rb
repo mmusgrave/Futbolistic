@@ -8,7 +8,7 @@ class Api::TaggingsController < ApplicationController
   end
 
   def create
-    # debugger
+    # 
 
     @tagging = Tagging.new(tagging_params)
 
