@@ -19,6 +19,7 @@ class StoryShow extends React.Component {
   constructor(props){
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleCommentDelete = this.handleCommentDelete.bind(this);
   }
 
   componentDidMount() {
@@ -63,7 +64,8 @@ class StoryShow extends React.Component {
     const story = e.currentTarget.value;
     this.props.destroyStory(story)
       .then(action => {
-        this.props.history.push("/");
+        debugger
+        return this.props.history.push("/");
       });
   }
 
@@ -109,10 +111,12 @@ class StoryShow extends React.Component {
 
   handleCommentDelete(e){
     e.preventDefault();
+    debugger
     const comment = e.currentTarget.value;
     this.props.destroyComment(comment)
       .then(action => {
-        this.props.history.push(`/stories/${this.props.story.id}`);
+        debugger
+        return this.props.history.push(`/stories/${this.props.story.id}`);
       });
   }
 

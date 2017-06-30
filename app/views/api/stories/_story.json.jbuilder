@@ -9,6 +9,7 @@ json.comments do
     # json.comment comment, :id, :body,
     # json.set! author, :id, :first_name, :last_name
     # # json comment.author :id, :first_name, :last_name
+    # debugger
     json.set! comment.id do
       # json.id comment.id
       json.body comment.body

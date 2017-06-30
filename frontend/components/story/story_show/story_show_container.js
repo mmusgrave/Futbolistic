@@ -5,6 +5,9 @@ import {
   requestAllStories,
   deleteStory
 } from '../../../actions/story_actions';
+import {
+  deleteComment
+} from '../../../actions/comment_actions';
 // import { selectSingleStory } from '../reducers/selectors';
 // import { selectAllStories } from '../reducers/selectors';
 
@@ -34,7 +37,8 @@ const mapDispatchToProps = dispatch => {
     // requestAllStories: () => dispatch(requestAllStories()),
     // requestAllStories: () => dispatch(requestAllStories()),
     requestSingleStory: id => dispatch(requestSingleStory(id)),
-    destroyStory: (post) => dispatch(deleteStory(post))
+    destroyStory: (story) => dispatch(deleteStory(story)),
+    destroyComment: (comment) => dispatch(deleteComment(comment)),
   }
 };
 
