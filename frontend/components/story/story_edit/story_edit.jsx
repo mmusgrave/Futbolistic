@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class StoryEdit extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       body: '',
       title: '',
@@ -14,14 +14,14 @@ class StoryEdit extends React.Component {
   }
 
   componentDidMount() {
-    
+
     this.props.requestSingleStory(parseInt(this.props.match.params.id));
     // this.props.requestAllStories();
   }
 
 
   componentWillReceiveProps(){
-    
+
     if (this.props.story){
       this.state = {
         body: this.props.story.body,
@@ -41,7 +41,7 @@ class StoryEdit extends React.Component {
       }
     }
     this.props.editStory(story).then( (stories) => {
-      
+
       return this.props.history.push(`/stories/${story.story.id}`);
       // return this.props.history.push('/')
     });
@@ -88,13 +88,14 @@ class StoryEdit extends React.Component {
                     </ul>
                     <ul className="form-ul">
                       <li className="li-body">
-                         <label>Body:
-                         <input
-                           type="text"
-                           value={this.state.body}
-                           onChange={this.update('body')}
-                         />
-                         </label>
+                        <label>Body: </label>
+                        <textarea
+                          rows="50"
+                          cols="150"
+                          value={this.state.body}
+                          onChange={this.update('body')}
+                          form="story-form">
+                        </textarea>
                          <br/>
                          </li>
                        </ul>
