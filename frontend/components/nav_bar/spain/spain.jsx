@@ -23,7 +23,7 @@ class Spain extends React.Component {
                   <Link to={`/topics/${10}`} value="10" className="drop-items">Atlético Madrid</Link>
                 </li>
                 <li className="col_1">
-                  <a className="drop-items" href="#">Barcelona</a>
+                  <Link to={`/topics/${11}`} value="10" className="drop-items">Barcelona</Link>
                   <a className="drop-items" href="#">Cádiz</a>
                   <a className="drop-items" href="#">Celta Vigo</a>
                   <a className="drop-items" href="#">Deportivo</a>

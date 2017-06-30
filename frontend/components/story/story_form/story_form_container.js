@@ -2,9 +2,12 @@ import { connect } from 'react-redux';
 import StoryForm from './story_form';
 import { createStory } from '../../../actions/story_actions';
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => {
+  return {
+    topics: state.topics
 
-});
+  }
+};
 
 const mapDispatchToProps = dispatch => {
   return {

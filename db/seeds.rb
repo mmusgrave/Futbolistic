@@ -97,9 +97,9 @@ musgrave_comment5 = Comment.create!({ author_id: musgrave.id, story_id: zidane_s
 
 Topic.destroy_all
 spain = Topic.create!({ topic_name: "All of Spain", parent_topic_id: nil })
-germany = Topic.create!({ topic_name: "Germany", parent_topic_id: nil })
-italy = Topic.create!({ topic_name: "Italy", parent_topic_id: nil })
-france = Topic.create!({ topic_name: "France", parent_topic_id: nil })
+germany = Topic.create!({ topic_name: "All of Germany", parent_topic_id: nil })
+italy = Topic.create!({ topic_name: "All of Italy", parent_topic_id: nil })
+france = Topic.create!({ topic_name: "All of France", parent_topic_id: nil })
 england = Topic.create!({ topic_name: "All of England", parent_topic_id: nil })
 south_america = Topic.create!({ topic_name: "South America", parent_topic_id: nil })
 europe = Topic.create!({ topic_name: "Europe", parent_topic_id: nil })
@@ -107,7 +107,7 @@ usa = Topic.create!({ topic_name: "USA", parent_topic_id: nil })
 
 spain1 = Topic.create!({ topic_name: "Real Madrid", parent_topic_id: spain.id })
 spain2 = Topic.create!({ topic_name: "Atlético Madrid", parent_topic_id: spain.id })
-spain3 = Topic.create!({ topic_name: "Spain 3", parent_topic_id: spain.id })
+spain3 = Topic.create!({ topic_name: "Barcelona", parent_topic_id: spain.id })
 spain4 = Topic.create!({ topic_name: "Spain 4", parent_topic_id: spain.id })
 spain5 = Topic.create!({ topic_name: "Spain 5", parent_topic_id: spain.id })
 
@@ -117,37 +117,37 @@ germany3 = Topic.create!({ topic_name: "Germany 3", parent_topic_id: germany.id 
 germany4 = Topic.create!({ topic_name: "Germany 4", parent_topic_id: germany.id })
 germany5 = Topic.create!({ topic_name: "Germany 5", parent_topic_id: germany.id })
 
-italy1 = Topic.create!({ topic_name: "Italy 1", parent_topic_id: italy.id })
+italy1 = Topic.create!({ topic_name: "Juventus", parent_topic_id: italy.id })
 italy2 = Topic.create!({ topic_name: "Italy 2", parent_topic_id: italy.id })
 italy3 = Topic.create!({ topic_name: "Italy 3", parent_topic_id: italy.id })
 italy4 = Topic.create!({ topic_name: "Italy 4", parent_topic_id: italy.id })
 italy5 = Topic.create!({ topic_name: "Italy 5", parent_topic_id: italy.id })
 
-france1 = Topic.create!({ topic_name: "France 1", parent_topic_id: france.id })
-france2 = Topic.create!({ topic_name: "France 2", parent_topic_id: france.id })
-france3 = Topic.create!({ topic_name: "France 3", parent_topic_id: france.id })
+france1 = Topic.create!({ topic_name: "Monaco", parent_topic_id: france.id })
+france2 = Topic.create!({ topic_name: "Marseille", parent_topic_id: france.id })
+france3 = Topic.create!({ topic_name: "PSG", parent_topic_id: france.id })
 france4 = Topic.create!({ topic_name: "France 4", parent_topic_id: france.id })
 france5 = Topic.create!({ topic_name: "France 5", parent_topic_id: france.id })
 
 england1 = Topic.create!({ topic_name: "Manchester United", parent_topic_id: england.id })
-england2 = Topic.create!({ topic_name: "England 2", parent_topic_id: england.id })
-england3 = Topic.create!({ topic_name: "England 3", parent_topic_id: england.id })
+england2 = Topic.create!({ topic_name: "Tottenham", parent_topic_id: england.id })
+england3 = Topic.create!({ topic_name: "MK Dons", parent_topic_id: england.id })
 england4 = Topic.create!({ topic_name: "England 4", parent_topic_id: england.id })
 england5 = Topic.create!({ topic_name: "England 5", parent_topic_id: england.id })
 
-south_america1 = Topic.create!({ topic_name: "South America 1", parent_topic_id: south_america.id })
+south_america1 = Topic.create!({ topic_name: "Argentina", parent_topic_id: south_america.id })
 south_america2 = Topic.create!({ topic_name: "South America 2", parent_topic_id: south_america.id })
 south_america3 = Topic.create!({ topic_name: "South America 3", parent_topic_id: south_america.id })
 south_america4 = Topic.create!({ topic_name: "South America 4", parent_topic_id: south_america.id })
 south_america5 = Topic.create!({ topic_name: "South America 5", parent_topic_id: south_america.id })
 
-europe1 = Topic.create!({ topic_name: "Europe 1", parent_topic_id: europe.id })
-europe2 = Topic.create!({ topic_name: "Europe 2", parent_topic_id: europe.id })
+europe1 = Topic.create!({ topic_name: "Ajax", parent_topic_id: europe.id })
+europe2 = Topic.create!({ topic_name: "Sporting", parent_topic_id: europe.id })
 europe3 = Topic.create!({ topic_name: "Europe 3", parent_topic_id: europe.id })
 europe4 = Topic.create!({ topic_name: "Europe 4", parent_topic_id: europe.id })
 europe5 = Topic.create!({ topic_name: "Europe 5", parent_topic_id: europe.id })
 
-usa1 = Topic.create!({ topic_name: "USA 1", parent_topic_id: usa.id })
+usa1 = Topic.create!({ topic_name: "Los Angles Galaxy", parent_topic_id: usa.id })
 usa2 = Topic.create!({ topic_name: "USA 2", parent_topic_id: usa.id })
 usa3 = Topic.create!({ topic_name: "USA 3", parent_topic_id: usa.id })
 usa4 = Topic.create!({ topic_name: "USA 4", parent_topic_id: usa.id })
@@ -155,15 +155,41 @@ usa5 = Topic.create!({ topic_name: "USA 5", parent_topic_id: usa.id })
 
 
 Tagging.destroy_all
+
+Tagging.create!({ topic_id: italy1.id, story_id: zidane_story3.id })
+Tagging.create!({ topic_id: italy1.id, story_id: musgrave_story3.id })
+
+Tagging.create!({ topic_id: france.id, story_id: zidane_story2.id })
+Tagging.create!({ topic_id: france.id, story_id: musgrave_story2.id })
+Tagging.create!({ topic_id: france1.id, story_id: zidane_story5.id })
+Tagging.create!({ topic_id: france1.id, story_id: musgrave_story5.id })
+Tagging.create!({ topic_id: france2.id, story_id: zidane_story4.id })
+Tagging.create!({ topic_id: france3.id, story_id: beckham_story3.id })
+
 tagging1 = Tagging.create!({ topic_id: spain1.id, story_id: beckham_story1.id })
 tagging2 = Tagging.create!({ topic_id: spain1.id, story_id: ronaldo_story1.id })
 tagging3 = Tagging.create!({ topic_id: spain1.id, story_id: musgrave_story1.id })
 tagging4 = Tagging.create!({ topic_id: spain1.id, story_id: zidane_story1.id })
 tagging5 = Tagging.create!({ topic_id: spain2.id, story_id: zidane_story1.id })
+Tagging.create!({ topic_id: spain3.id, story_id: messi_story1.id })
+
 
 tagging6 = Tagging.create!({ topic_id: england1.id, story_id: beckham_story2.id })
 tagging7 = Tagging.create!({ topic_id: england1.id, story_id: ronaldo_story2.id })
 tagging8 = Tagging.create!({ topic_id: england1.id, story_id: musgrave_story4.id })
+Tagging.create!({ topic_id: england.id, story_id: dele_story3.id })
+Tagging.create!({ topic_id: england.id, story_id: beckham_story5.id })
+Tagging.create!({ topic_id: england2.id, story_id: dele_story1.id })
+Tagging.create!({ topic_id: england3.id, story_id: dele_story2.id })
+
+
+Tagging.create!({ topic_id: south_america1.id, story_id: messi_story2.id })
+
+Tagging.create!({ topic_id: europe1.id, story_id: dele_story4.id })
+Tagging.create!({ topic_id: europe2.id, story_id: ronaldo_story3.id })
+
+Tagging.create!({ topic_id: usa1.id, story_id: dele_story5.id })
+Tagging.create!({ topic_id: usa1.id, story_id: beckham_story4.id })
 
 
 Subscription.destroy_all

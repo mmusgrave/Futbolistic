@@ -13,11 +13,11 @@ class France extends React.Component {
               <button className="dropbtn">France</button>
               <ul className="dropdown-content">
                 <li className="col_1">
-                  <a className="drop-items" href="#">All of France</a>
+                  <Link to="/topics/4" className="drop-items">All of France</Link>
                   <a className="drop-items" href="#">National Team</a>
-                  <a className="drop-items" href="#">Atalanta</a>
-                  <a className="drop-items" href="#">Bologna</a>
-                  <a className="drop-items" href="#">Cagliari</a>
+                  <Link to="/topics/24" className="drop-items">Monaco</Link>
+                  <Link to="/topics/25" className="drop-items">Marseille</Link>
+                  <Link to="/topics/26" className="drop-items">PSG</Link>
                 </li>
                 <li className="col_1">
                   <a className="drop-items" href="#">Chievo</a>

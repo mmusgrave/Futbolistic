@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
 
   let relevantStories = {};
   if (state.topics.currentTopic && state.topics.currentTopic.stories.length > 0){
+    debugger
     state.topics.currentTopic.stories.forEach( (id) => {
       relevantStories[parseInt(id)] = state.stories.stories[parseInt(id)];
     });

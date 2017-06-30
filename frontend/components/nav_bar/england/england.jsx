@@ -16,7 +16,8 @@ class England extends React.Component {
                   <Link to="/topics/5" className="drop-items">All of England</Link>
                   <a className="drop-items" href="#">National Team</a>
                   <Link to="/topics/29" className="drop-items">Manchester United</Link>
-                  <a className="drop-items" href="#">Bologna</a>
+                  <Link to="/topics/30" className="drop-items">Tottenham</Link>
+                  <Link to="/topics/31" className="drop-items">MK Dons</Link>
                   <a className="drop-items" href="#">Cagliari</a>
                 </li>
                 <li className="col_1">

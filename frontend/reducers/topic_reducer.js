@@ -35,19 +35,16 @@ const TopicReducer = (state = nullTopic , action) => {
       }
 
       if (action.topic.stories){
-        // if (action.story.comments.length > 0)
+
           fakeTopic.stories = Object.keys(action.topic.stories)
 
       } else {
         fakeTopic.stories = []
 
       }
-      let newState = merge({}, state, {
-        currentTopic: fakeTopic
-      })
 
-
-      return newState;
+      currentState.currentTopic = fakeTopic;
+      return currentState;
     case RECEIVE_SINGLE_STORY:
       currentState.topics = action.story.tagged_topics;
       return currentState;

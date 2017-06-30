@@ -13,9 +13,9 @@ class Italy extends React.Component {
               <button className="dropbtn">Italy</button>
               <ul className="dropdown-content">
                 <li className="col_1">
-                  <a className="drop-items" href="#">All of Italy</a>
+                  <Link to="/topics/3" className="drop-items">All of Italy</Link>
                   <a className="drop-items" href="#">National Team</a>
-                  <a className="drop-items" href="#">Atalanta</a>
+                  <Link to="/topics/19" className="drop-items">Juventus</Link>
                   <a className="drop-items" href="#">Bologna</a>
                   <a className="drop-items" href="#">Cagliari</a>
                 </li>
