@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import {values } from 'lodash';
+import CommentForm from '../../comment/comment_form/comment_form';
+import CommentFormContainer from '../../comment/comment_form/comment_form_container';
 
 class StoryShow extends React.Component {
   // componentDidMount() {
@@ -97,10 +99,46 @@ class StoryShow extends React.Component {
     }
   }
 
+  commentForm() {
+    if (this.props.user) {
+      return (<CommentFormContainer/>);
+    } else {
+      return(<div></div>);
+    }
+  }
+
+  handleCommentDelete(e){
+    e.preventDefault();
+    const comment = e.currentTarget.value;
+    this.props.destroyComment(comment)
+      .then(action => {
+        this.props.history.push(`/stories/${this.props.story.id}`);
+      });
+  }
+
+  commentButtons(author_id, comment_id) {
+    if (this.props.user) {
+      if (author_id === this.props.user.id) {
+        return (
+          <div>
+            <Link to="/">EDIT</Link>
+            <button className="delete-button" onClick={this.handleCommentDelete} value={comment_id}>Delete</button>
+          </div>
+        );
+      } else {
+        return(<div></div>);
+      }
+    }else {
+      return(<div></div>);
+    }
+
+
+  }
+
   comments(){
     debugger
     if (this.props.story){
-      
+
       var comment_ids = values(this.props.story.comments);
       debugger
       var comments = comment_ids.map( (id) => {
@@ -109,10 +147,12 @@ class StoryShow extends React.Component {
             <li key={parseInt(id)}>
               <p>{this.props.comments[parseInt(id)].body}</p>
               <p>from {this.props.comments[parseInt(id)].author.first_name} {this.props.comments[parseInt(id)].author.last_name}</p>
+              {this.commentButtons(this.props.comments[parseInt(id)].author.id, parseInt(id))}
               <br/>
             </li>
           );
       });
+
       debugger
       return (
         <div className="comments">
@@ -120,6 +160,7 @@ class StoryShow extends React.Component {
             <br/>
             <h4>COMMENTS</h4>
             {comments}
+            {this.commentForm()}
           </ul>
         </div>
       );

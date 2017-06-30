@@ -30,16 +30,15 @@ export const deleteComment = (id) => {
   });
 };
 //
-// export const updateStory = (story) =>{
-//   debugger
-//   return $.ajax({
-//     method: 'PATCH',
-//     url: `api/stories/${story.story.id}`,
-//     data: {
-//       story: {
-//         title: story.story.title,
-//         body: story.story.body
-//       }
-//     }
-//   });
-// };
+export const updateComment = (comment) =>{
+  debugger
+  return $.ajax({
+    method: 'PATCH',
+    url: `api/comments/${comment.id}`,
+    data: {
+      comment: {
+        body: comment.body
+      }
+    }
+  });
+};

@@ -44,8 +44,8 @@ export const editComment = (comment) => (dispatch) => {
   debugger
   return APIUtil.updateComment(comment).then(comment => {
     debugger
-    return dispatch(requestSingleComment(comment.id));
-    // dispatch(requestSingleStory(comment.story_id));
+    // return dispatch(requestSingleComment(comment.id));
+    return dispatch(requestSingleStory(comment.story.id));
     // return dispatch(requestAllComments());
     // return comment;
   })
