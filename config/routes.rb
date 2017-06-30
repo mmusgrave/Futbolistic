@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    resource :session, only: [:index, :create, :destroy, :show]
    resources :comments
    resources :stories, only: [:index, :create, :destroy, :update, :show]
+   resources :topics, only: [:index, :show, :create]
   #  resources :stories, except: [:edit, :new]
  end
 

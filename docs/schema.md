@@ -31,7 +31,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 topic_name  | string    | not null
-parent_topic_id| integer  |
+parent_topic_id| integer  | foreign_key
 
 ## taggings
 column name | data type | details
