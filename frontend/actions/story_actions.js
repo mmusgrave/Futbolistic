@@ -13,11 +13,11 @@ export const requestAllStories = () => (dispatch) => {
 
 export const requestSingleStory = (id) => (dispatch) => {
   // dispatch(startLoadingAllStories());
-  
+
   return APIUtil.fetchStory(id).then( (story) => {
-    
+
       return dispatch(receiveSingleStory(story));
-      // 
+      //
       // return story;
     });
 };
@@ -38,9 +38,9 @@ export const deleteStory = (story) => (dispatch) => {
 };
 
 export const editStory = (story) => (dispatch) => {
-  
+  debugger
   return APIUtil.updateStory(story).then(story => {
-    
+    debugger
     dispatch(requestSingleStory(story.id));
     return dispatch(requestAllStories());
     // return story;
@@ -57,7 +57,7 @@ export const receiveErrors = errors => {
 
 
 export const receiveAllStories = (stories) => {
-  // 
+  //
   return {
     type: RECEIVE_ALL_STORIES,
     stories
@@ -65,7 +65,7 @@ export const receiveAllStories = (stories) => {
 };
 
 export const receiveSingleStory = story => {
-  
+
   return {
     type: RECEIVE_SINGLE_STORY,
     story

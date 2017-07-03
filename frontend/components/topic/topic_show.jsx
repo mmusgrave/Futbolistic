@@ -65,7 +65,7 @@ class TopicShow extends React.Component {
     // );
     // ;
     // this.props.requestSingleTopic(parseInt(this.props.match.params.id));
-    
+
     const topic = this.props.currentTopic;
     if (topic && topic.id === parseInt(this.props.match.params.id)){
       // if (this.props.currentTopic.id === parseInt(this.props.match.params.id)){
@@ -79,16 +79,17 @@ class TopicShow extends React.Component {
           //
           storiesDisplay.push(
             <li key={parseInt(story)}>
-              <Link to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
-              <h4>by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+              <Link className="index-link" to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
+              <h4 className="author" >by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+              <br/>
             </li>
           );
         });
 
         return (
           <div className="index-div">
-          <h1>{this.props.currentTopic.topic_name}</h1>
-            <ul>
+            <ul className="index-ul">
+              <h1 className="topic-title">{this.props.currentTopic.topic_name}</h1>
               {storiesDisplay}
             </ul>
           </div>

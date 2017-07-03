@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import {values } from 'lodash';
 import CommentForm from '../../comment/comment_form/comment_form';
 import CommentFormContainer from '../../comment/comment_form/comment_form_container';
@@ -141,33 +142,33 @@ class StoryShow extends React.Component {
   comments(){
 
     if (this.props.story){
+      // if (this.props.story.comment){
+        var comment_ids = values(this.props.story.comments);
 
-      var comment_ids = values(this.props.story.comments);
+        var comments = comment_ids.map( (id) => {
 
-      var comments = comment_ids.map( (id) => {
+            return(
+              <li key={parseInt(id)}>
+                <p>{this.props.comments[parseInt(id)].body}</p>
+                <p>from {this.props.comments[parseInt(id)].author.first_name} {this.props.comments[parseInt(id)].author.last_name}</p>
+                {this.commentButtons(this.props.comments[parseInt(id)].author.id, parseInt(id))}
+                <br/>
+              </li>
+            );
+        });
 
-          return(
-            <li key={parseInt(id)}>
-              <p>{this.props.comments[parseInt(id)].body}</p>
-              <p>from {this.props.comments[parseInt(id)].author.first_name} {this.props.comments[parseInt(id)].author.last_name}</p>
-              {this.commentButtons(this.props.comments[parseInt(id)].author.id, parseInt(id))}
+
+        return (
+          <div className="comments">
+            <ul>
               <br/>
-            </li>
-          );
-      });
-
-
-      return (
-        <div className="comments">
-          <ul>
-            <br/>
-            <h4>COMMENTS</h4>
-            {comments}
-            {this.commentForm()}
-          </ul>
-        </div>
-      );
-
+              <h2>Comments</h2>
+              {comments}
+              {this.commentForm()}
+            </ul>
+          </div>
+        );
+      // }
     }
   }
 
@@ -213,4 +214,4 @@ class StoryShow extends React.Component {
 // </ul>
 
 
-export default StoryShow;
+export default withRouter(StoryShow);

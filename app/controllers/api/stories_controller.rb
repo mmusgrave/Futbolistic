@@ -8,7 +8,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def create
-    # 
+    #
 
     @story = Story.new(story_params.merge({ author_id: current_user.id }))
 
@@ -20,6 +20,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def update
+    debugger
     @story = Story.find(params[:id])
 
     if @story.update(story_params)

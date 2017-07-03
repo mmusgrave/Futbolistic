@@ -313,13 +313,48 @@ div {
   top:auto;
 }*/
 
-.index-ul {
+.index-ul{
   padding: 0px;
+  text-decoration: none;
+  color: black;
+}
+
+.subscription-ul{
+  padding: 20px;
+  width: 300px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+}
+
+.index-link {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  /*display: flex;
+  justify-content: center;*/
+}
+
+.index-link:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.author {
+  margin: 0px;
+  font-size: 12px;
+  padding-left: 15px;
+}
+
+.topic-title {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .title-ul {
   padding: 0px;
 }
+
 
 .index-div {
   background-color: white;
@@ -327,6 +362,8 @@ div {
   height: 100%;
   display: flex;
   justify-content: center;
+  text-decoration: none;
+  color: black;
 }
 
 .show-title {

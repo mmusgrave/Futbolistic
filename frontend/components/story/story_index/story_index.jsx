@@ -12,7 +12,7 @@ class StoryIndex extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
-    // 
+    //
     this.props.requestAllStories();
   }
 
@@ -29,20 +29,22 @@ class StoryIndex extends React.Component {
     // ;
     const stories = this.props.stories;
     const storyList =  stories.map(story => {
-      // 
+      //
         if (story.author.id === 1){
             return (
               <li key={story.id}>
-              <Link to={`/stories/${story.id}`}>{ story.title }</Link>
-              <h4>by The Guest Account</h4>
+                <Link   className="index-link"to={`/stories/${story.id}`}>{ story.title }</Link>
+                <h4 className="author">by The Guest Account</h4>
+                <br/>
               </li>
             );
 
         } else {
             return (
               <li key={story.id}>
-              <Link to={`/stories/${story.id}`}>{ story.title }</Link>
-              <h4>by { story.author.first_name }  { story.author.last_name }      </h4>
+                <Link  className="index-link" to={`/stories/${story.id}`}>{ story.title }</Link>
+                <h4 className="author">by { story.author.first_name }  { story.author.last_name }      </h4>
+                <br/>
               </li>
             );
         }
@@ -50,12 +52,12 @@ class StoryIndex extends React.Component {
       }
     );
     // ;
+    // <li>
+    //   <h1>All Stories</h1>
+    // </li>
     return (
       <div className="index-div">
         <ul className="title-ul">
-          <li>
-            <h1>All Stories</h1>
-          </li>
           <li>
             <section className="index_box">
               <ul className="index-ul">

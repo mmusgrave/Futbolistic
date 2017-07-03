@@ -8,9 +8,12 @@ class StoryEdit extends React.Component {
     this.state = {
       body: '',
       title: '',
+      imageFile: null,
+      imageUrl: null,
       updated: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidMount() {
@@ -31,16 +34,38 @@ class StoryEdit extends React.Component {
     }
   }
 
+  updateFile(e) {
+    e.preventDefault();
+    //
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ imageFile:file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    let story = {
-      story:{
-        title: this.state.title,
-        body: this.state.body,
-        id: this.state.id
-      }
+    var formData = new FormData();
+    formData.append("story[title]", this.state.title);
+    formData.append("story[body]", this.state.body);
+    formData.append("story[id]", this.state.id);
+    if (this.state.imageFile){
+      formData.append("story[image]", this.state.imageFile);
     }
-    this.props.editStory(story).then( (stories) => {
+    debugger
+    // let story = {
+    //   story:{
+    //     title: this.state.title,
+    //     body: this.state.body,
+    //     id: this.state.id
+    //   }
+    // }
+    this.props.editStory(formData).then( (stories) => {
 
       return this.props.history.push(`/stories/${story.story.id}`);
       // return this.props.history.push('/')
@@ -86,6 +111,17 @@ class StoryEdit extends React.Component {
                         <br/>
                       </li>
                     </ul>
+                    <ul className="form-ul">
+                     <li className="li-body">
+                       <label>Main Image: </label>
+                         <input
+                           type="file"
+                           onChange={this.updateFile}
+                         />
+                         <img src={this.state.imageUrl}/>
+                         <br/>
+                         </li>
+                     </ul>
                     <ul className="form-ul">
                       <li className="li-body">
                         <label>Body: </label>
