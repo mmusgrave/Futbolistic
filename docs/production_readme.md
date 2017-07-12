@@ -1,5 +1,5 @@
 
-#Futbolistic
+# Futbolistic
 
 Futbolistic is a web application inspired by the initial version of BleacherReport and Medium.
 
