@@ -1,3 +1,9 @@
+
+#Futbolistic
+
+Futbolistic is a web application inspired by the initial version of BleacherReport and Medium.
+
+
 BleacherReport (open publishing)
 
 Stories
@@ -6,14 +12,26 @@ Topics/Subtopics/Tags and Feed
 Bonus: Follows
 Bonus: Bookmarks
 Bonus: User Privileges
+[Live](http://futbolistic.herokuapp.com/#/)
 
-Futbolistic
+## Features
 
-Futbolistic live NB: This should be a link to your production site
+* Authentication
+    * Session is authenticated in the backend. All queries return data that corresponds to the proper user.
+    * User can log in from any page in the app. Writing a story, editing a story, writing a comment, viewing a subscription feed, etc. requires user log in, and these features are not available without an account. (useername: 'zizou', password: 'password')
+* Publish a story
+* Edit an already published story
+* Delete a story
+* Comment on stories
+* Delete a comment from a story
+* Navigate to feeds
+* Feeds display all articles of their topic
+* User have Subscribed Topics
+* Subscribed Topics display combined feed of subscribed feeds
+* View articles written by other users
+* View comments from other users
 
-Features & Implementation
-
-Feeds
+<!-- Feeds
 
 Feeds will be indexes of stories. There is a SubscriptionFeedContainer for the user that displays on their homepage, and is a feed containing articles from topics that the user has subscribed to. On the user homepage there is also a list of the subscribed topics with links to each topic, so the user can view each topic individually.
 
@@ -36,7 +54,7 @@ The homepage is where the user is directed on sign up or login. It holds their t
 
 Topics, Tags, Subscriptions, & Feeds
 
-All of these attributes are stored in the database in a join table. These attributes allow for a Story to be associated with a certain topic (tag) and a user to be associated with a certain topic (subscriptions). These attributes are what allow us to access the data for subscription feeds. Upon login, an API call is made to the database which joins the user table,  the stories table, and the topics table through the subscriptions and taggings tables. Once the user is logged in they have all of their subscribed topics and stories available to them on their homepage. On the backend, the taggings table is a join table connecting the story_id of a tagged story with the topic_id of the topic the story falls under. The subscriptions table is also a join table connecting the user_id of the subscribed user to the topic_id of the topic they are subscribed to. The structure of the tables is as follows [Users]-[Subscriptions Join]-[Topics]-[Taggings Join]-[Stories]. This structure allows the User to immediately access all of the stories that they are subscribed to using a Double Through association. The Users table has a through association to subscribed topics, and the Topics table has a through association to tagged stories. A user has access to their subscribed stories via a through association that uses these 2 through associations. 
+All of these attributes are stored in the database in a join table. These attributes allow for a Story to be associated with a certain topic (tag) and a user to be associated with a certain topic (subscriptions). These attributes are what allow us to access the data for subscription feeds. Upon login, an API call is made to the database which joins the user table,  the stories table, and the topics table through the subscriptions and taggings tables. Once the user is logged in they have all of their subscribed topics and stories available to them on their homepage. On the backend, the taggings table is a join table connecting the story_id of a tagged story with the topic_id of the topic the story falls under. The subscriptions table is also a join table connecting the user_id of the subscribed user to the topic_id of the topic they are subscribed to. The structure of the tables is as follows [Users]-[Subscriptions Join]-[Topics]-[Taggings Join]-[Stories]. This structure allows the User to immediately access all of the stories that they are subscribed to using a Double Through association. The Users table has a through association to subscribed topics, and the Topics table has a through association to tagged stories. A user has access to their subscribed stories via a through association that uses these 2 through associations.
 
 Future Directions for the Project
 
@@ -64,4 +82,4 @@ Technical implementation details for anything worth mentioning
 Anything you had to stop and think about before building
 Snippets or links to see code for these (make sure it looks good, no 30 line methods)
 Screenshots of anything related that looks cool (make sure these link to the live site if applicable)
-To-dos/future features
+To-dos/future features -->
