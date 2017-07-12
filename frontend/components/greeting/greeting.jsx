@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // export const logout = (e) => {
-  // 
+  //
   // e.preventDefault();
  // return logout();
   // return this.props.history.push(`/`);
@@ -26,13 +26,13 @@ const sessionLinks = (clearErrors) => {
 };
 
 const personalGreeting = (currentUser, logout) => {
-  // 
+  //
   return (
     <hgroup className="header-group">
       <ul className="nav-bar-ul">
-        <li className="flyout">
+        <li className="flyout header-name">
           <div className="dropdown">
-            <Link to={`/users/${currentUser.id}`} className="dropbtn header-name white-link">{currentUser.first_name}</Link>
+            <Link to={`/users/${currentUser.id}`} className="dropbtn white-link">{currentUser.first_name}</Link>
             <ul className="dropdown-content">
               <li className="col_1">
                 <a className="drop-items" href="#/story/new">Write a Story</a>
@@ -49,7 +49,7 @@ const personalGreeting = (currentUser, logout) => {
 };
 
 const Greeting = ({ currentUser, logout, clearErrors }) => {
-  // 
+  //
     return currentUser ? personalGreeting(currentUser, logout) : sessionLinks(clearErrors)
 
 };

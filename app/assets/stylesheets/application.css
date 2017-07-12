@@ -15,8 +15,10 @@
  */
 
 * {
-  /*font-family: "Gotham Cond",Helvetica,Arial,sans-serif;*/
-  font-family: fantasy;
+  /*font-family: Helvetica,Arial,sans-serif;*/
+  font-family: Helvetica,Arial,sans-serif;
+  /*font-family: fantasy;*/
+  /*font-family: Tahoma, Geneva, sans-serif;*/
 }
 
 ul {
@@ -34,7 +36,7 @@ header {
   color: white;
   display: flex;
   justify-content: space-between;
-  height: 60px;
+  height: 50px;
 }
 
 .name-errors {
@@ -63,8 +65,8 @@ header {
   padding-left: 0px;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 
@@ -135,6 +137,10 @@ div {
   flex-direction: row;*/
 }
 
+.header-name {
+  margin-top: 7px;
+}
+
 .header-button {
   display: block;
   text-align: center;
@@ -145,6 +151,7 @@ div {
   color: white;
   font-size: 20px;
   width: 100px;
+  margin-top: 7px;
 
 }
 .header-button:hover {
@@ -178,6 +185,7 @@ div {
 }
 
 .nav-bar-title {
+  margin-top: 10px;
   padding-right: 10px;
 }
 
