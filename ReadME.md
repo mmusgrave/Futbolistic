@@ -3,15 +3,6 @@
 
 Futbolistic is a web application inspired by the initial version of BleacherReport and Medium.
 
-
-BleacherReport (open publishing)
-
-Stories
-Commenting on stories
-Topics/Subtopics/Tags and Feed
-Bonus: Follows
-Bonus: Bookmarks
-Bonus: User Privileges
 [Live](http://futbolistic.herokuapp.com/#/)
 
 ## Features
@@ -62,28 +53,28 @@ If you'd like to take a closer look at the code behind the Futbolistic App, the 
 ## Screenshots
 
 Main page:
-![main page](./screenshots/main_page.jpg)
+![main page](/screenshots/main_page.jpg)
 
 Story Show page:
-![recipe detail](./screenshots/story_show.jpg)
+![story show](/screenshots/story_show.jpg)
 
 Comments:
-![recipe detail](./screenshots/comments.jpg)
+![comments](/screenshots/comments.jpg)
 
 Subscription Feed:
-![recipe detail](./screenshots/subscription_feed.jpg)
+![subscription feed](/screenshots/subscription_feed.jpg)
 
 Dropdown menu:
-![search bar](./screenshots/dropdown.jpg)
+![dropdown](/screenshots/dropdown.jpg)
 
 Login page:
-![search bar](./screenshots/login.jpg)
+![login](/screenshots/login.jpg)
 
 Sign Up page:
-![search bar](./screenshots/signup.jpg)
+![signup](/screenshots/signup.jpg)
 
 Feed page:
-![search bar](./screenshots/single_feed.jpg)
+![single feed](/screenshots/single_feed.jpg)
 
 
 <!-- Feeds
