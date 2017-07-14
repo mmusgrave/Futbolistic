@@ -53,27 +53,35 @@ If you'd like to take a closer look at the code behind the Futbolistic App, the 
 ## Screenshots
 
 Main page:
+
 ![main page](/screenshots/main_page.png)
 
 Story Show page:
+
 ![story show](/screenshots/story_show.png)
 
 Comments:
+
 ![comments](/screenshots/comments.png)
 
 Subscription Feed:
+
 ![subscription feed](/screenshots/subscription_feed.png)
 
 Dropdown menu:
+
 ![dropdown](/screenshots/dropdown.png)
 
 Login page:
+
 ![login](/screenshots/login.png)
 
 Sign Up page:
+
 ![signup](/screenshots/signup.png)
 
 Feed page:
+
 ![single feed](/screenshots/single_feed.png)
 
 
