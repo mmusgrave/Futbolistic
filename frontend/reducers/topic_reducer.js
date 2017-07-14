@@ -20,13 +20,11 @@ const nullTopic = Object.freeze({
 
 const TopicReducer = (state = nullTopic , action) => {
   Object.freeze(state);
-
-  // let currentState = merge({}, state, nullStory);
   let currentState = merge({}, state, {currentTopic: null});
   switch(action.type) {
     case RECEIVE_SINGLE_TOPIC:
 
-      // currentState.currentTopic = action.topic;
+      
 
       let fakeTopic = {
         parent_topic: action.topic.parent_topic,

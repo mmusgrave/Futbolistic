@@ -18,7 +18,7 @@ Bonus: User Privileges
 
 * Authentication
     * Session is authenticated in the backend. All queries return data that corresponds to the proper user.
-    * User can log in from any page in the app. Writing a story, editing a story, writing a comment, viewing a subscription feed, etc. requires user log in, and these features are not available without an account. (useername: 'zizou', password: 'password')
+    * User can log in from any page in the app. Writing a story, editing a story, writing a comment, viewing a subscription feed, etc. requires user log in, and these features are not available without an account. (username: 'zizou', password: 'password')
 * Publish a story
 * Edit an already published story
 * Delete a story
@@ -30,6 +30,61 @@ Bonus: User Privileges
 * Subscribed Topics display combined feed of subscribed feeds
 * View articles written by other users
 * View comments from other users
+
+## Code Guide
+
+If you'd like to take a closer look at the code behind the Futbolistic App, the best folders to look in are:
+
+* [DB Schema](./db/schema.rb)
+* [Rails Routes](./config/routes.rb)
+* [API JBuilder](./app/views/api)
+* [Futbolistic.jsx](./frontend/Futbolistic.jsx)
+* [Flux Reducers](./frontend/reducers)
+* [React components](./frontend/components)
+  * [App](./frontend/components/app.jsx)
+* [Api Util](./frontend/util/api_util.js)
+* [Rails controllers](./app/controllers/api)
+* [Rails models](./app/controllers/api)
+
+
+## Languages, Frameworks, Libraries, Etc.
+
+* Ruby on Rails
+* PostgreSQL
+* React
+* Flux
+* AWS
+* Gems
+  * Paperclip
+  * Jbuilder
+  * BCrypt
+
+## Screenshots
+
+Main page:
+![main page](./screenshots/main_page.jpg)
+
+Story Show page:
+![recipe detail](./screenshots/story_show.jpg)
+
+Comments:
+![recipe detail](./screenshots/comments.jpg)
+
+Subscription Feed:
+![recipe detail](./screenshots/subscription_feed.jpg)
+
+Dropdown menu:
+![search bar](./screenshots/dropdown.jpg)
+
+Login page:
+![search bar](./screenshots/login.jpg)
+
+Sign Up page:
+![search bar](./screenshots/signup.jpg)
+
+Feed page:
+![search bar](./screenshots/single_feed.jpg)
+
 
 <!-- Feeds
 

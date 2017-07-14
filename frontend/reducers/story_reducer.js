@@ -6,31 +6,23 @@ import {
   RECEIVE_CURRENT_USER,
   UPDATE_STORY,
   REMOVE_STORY,
-//   CLEAR_ERRORS,
   RECEIVE_ERRORS
 } from '../actions/story_actions';
 import {
-  // RECEIVE_ALL_STORIES,
-  // RECEIVE_SINGLE_STORY,
-  // RECEIVE_CURRENT_USER,
-  // UPDATE_STORY,
-  REMOVE_COMMENT//,
-//   CLEAR_ERRORS,
-  // RECEIVE_ERRORS
+  REMOVE_COMMENT
 } from '../actions/comment_actions';
 //
 
 import { RECEIVE_SINGLE_TOPIC } from '../actions/topic_actions';
 const nullStory = Object.freeze({
   stories: {},
-  currentStory: null//,
-  // errors: {}
+  currentStory: null
 });
 
 const StoryReducer = (state = nullStory, action) => {
   Object.freeze(state);
   //
-  // let currentState = merge({}, state, nullStory);
+
   let currentState = merge({}, state);
   switch(action.type) {
     case RECEIVE_ALL_STORIES:
@@ -43,10 +35,6 @@ const StoryReducer = (state = nullStory, action) => {
 
       return merge({}, state, { stories: action.topic.stories });
     case RECEIVE_SINGLE_STORY:
-      //
-      // currentState.currentStory = action.story;
-      //
-      // currentState.currentStory.comments = Object.keys(action.story.comments);
 
       let fakeStory = {
         author: action.story.author,
@@ -68,10 +56,6 @@ const StoryReducer = (state = nullStory, action) => {
         currentStory: fakeStory
       })
 
-      // currentState.stories[parseInt(action.story.id)] = action.story;
-      //
-      // currentState.stories[parseInt(action.story.id)] = Object.keys(action.story.comments);
-      //
       return newState;
 
     case UPDATE_STORY:
@@ -82,15 +66,12 @@ const StoryReducer = (state = nullStory, action) => {
       return currentState;
     case REMOVE_STORY:
 
-      //maybe update current user in here
       delete currentState.stories[action.story.id];
-      // currentState.stories.
       return currentState;
     case REMOVE_COMMENT:
 
-      //maybe update current user in here
+
       const commentIndex = currentState.currentStory.comments.indexOf(action.comment.id.toString());
-      // delete currentState.currentStory.comments[comment_index];
       let newCommentsArray1 = currentState.currentStory.comments.slice(0, commentIndex);
       let newCommentsArray2 = currentState.currentStory.comments.slice(commentIndex+1);
       let newCommentsArray = newCommentsArray1.concat(newCommentsArray2);
