@@ -9,7 +9,7 @@ json.comments do
     # json.comment comment, :id, :body,
     # json.set! author, :id, :first_name, :last_name
     # # json comment.author :id, :first_name, :last_name
-    # 
+    #
     json.set! comment.id do
       # json.id comment.id
       json.body comment.body
@@ -29,13 +29,13 @@ json.tagged_topics do
     # json.comment comment, :id, :body,
     # json.set! author, :id, :first_name, :last_name
     # # json comment.author :id, :first_name, :last_name
-    # 
+    #
     json.set! topic.id do
       # json.id comment.id
       json.topic_name topic.topic_name
       json.parent_topic do
         json.id topic.parent_topic_id
-        json.topic_name topic.parent_topic.topic_name
+        json.topic_name topic.parent_topic.topic_name if topic.parent_topic
       end
     end
   end

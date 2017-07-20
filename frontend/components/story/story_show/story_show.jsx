@@ -36,7 +36,7 @@ class StoryShow extends React.Component {
     const story = this.props.story;
     if (user && user.id === story.author.id){
       return (
-        <Link to={`/stories/${story.id}/edit`}>Edit Story</Link>
+        <Link className='header-button' to={`/stories/${story.id}/edit`}>Edit Story</Link>
       );
     } else {
       <div></div>
@@ -52,7 +52,7 @@ class StoryShow extends React.Component {
       //   <Link to={`/`} onClick={this.handleDelete} value={story.id}>Delete Story</Link>
       // );
       return (
-        <button className="delete-button" onClick={this.handleDelete} value={story.id}>Delete</button>
+        <button className="header-button delete-button" onClick={this.handleDelete} value={story.id}>Delete</button>
       );
     } else {
       <div></div>
@@ -94,11 +94,23 @@ class StoryShow extends React.Component {
 
   imageRender() {
     const story = this.props.story;
-
+    console.log(this);
     if (story.image_url !== "/images/original/missing.png"){
-      return ( <img src={story.image_url}/> );
+      return (
+        <ul className="show-ul">
+          <li className="li-body">
+            <img className='show-image' src={story.image_url}/>
+          </li>
+        </ul>
+      );
     } else {
-      return ( <div> </div>)
+      return (
+      <ul className="show-ul">
+        <li className="li-body">
+          <img src='https://s3.amazonaws.com/futbolistic-pro/defaultSoccerPic.jpg'/>
+        </li>
+      </ul>
+      )
     }
   }
 
@@ -126,7 +138,7 @@ class StoryShow extends React.Component {
       if (author_id === this.props.user.id) {
         return (
           <div>
-            <button className="delete-button" onClick={this.handleCommentDelete} value={comment_id}>Delete</button>
+            <button className="delete-button header-button" onClick={this.handleCommentDelete} value={comment_id}>Delete</button>
           </div>
         );
       } else {
@@ -148,11 +160,11 @@ class StoryShow extends React.Component {
         var comments = comment_ids.map( (id) => {
 
             return(
-              <li key={parseInt(id)}>
+              <li key={parseInt(id)} className="comment">
+                <p className="comment-author">{this.props.comments[parseInt(id)].author.first_name} {this.props.comments[parseInt(id)].author.last_name}</p>
                 <p>{this.props.comments[parseInt(id)].body}</p>
-                <p>from {this.props.comments[parseInt(id)].author.first_name} {this.props.comments[parseInt(id)].author.last_name}</p>
                 {this.commentButtons(this.props.comments[parseInt(id)].author.id, parseInt(id))}
-                <br/>
+
               </li>
             );
         });
@@ -160,12 +172,13 @@ class StoryShow extends React.Component {
 
         return (
           <div className="comments">
-            <ul>
               <br/>
-              <h2>Comments</h2>
-              {comments}
-              {this.commentForm()}
-            </ul>
+              <h3>Comments</h3>
+              <ul >
+                {comments}
+                {this.commentForm()}
+              </ul>
+              <br/><br/><br/>
           </div>
         );
       // }
@@ -176,27 +189,34 @@ class StoryShow extends React.Component {
 
     const story = this.props.story;
     // const story = this.props.requestSingleStory(parseInt(this.props.match.params.id));
-
     if (story){
       return (
+        <div className="show-container">
           <div className="show-title">
 
-          {this.imageRender()}
             <ul className="show-ul">
               <li className="li-body">
                 <h1 className="title">{story.title}</h1>
               </li>
             </ul>
+            <br/><br/>
             {this.authorName()}
+            <br/><br/>
+            {this.imageRender()}
+            <br/><br/>
             <ul className="show-ul">
               <li className="li-body">
-                <h3 className="show-body">{story.body}</h3>
+                <p className="show-body">{story.body}</p>
               </li>
             </ul>
-            {this.editButton()}
-            {this.deleteButton()}
+            <ul className='button-ul'>
+              <li>{this.editButton()}</li>
+              <li>{this.deleteButton()}</li>
+            </ul>
             {this.comments()}
           </div>
+        </div>
+
       );
     } else {
       return (

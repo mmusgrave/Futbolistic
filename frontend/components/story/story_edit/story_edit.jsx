@@ -92,15 +92,15 @@ class StoryEdit extends React.Component {
 
 
               <ul className="form-ul">
-                <li className="li-body">
+                <li className="form-body">
                 <form  className="edit-form" onSubmit={this.handleSubmit}>
                 <ul className="form-ul">
-                  <li className="li-body">
+                  <li className="form-body">
                   <h2 className="edit-title"> Edit Story </h2>
                   </li>
                 </ul>
                   <ul className="form-ul">
-                    <li className="li-body">
+                    <li className="form-body">
                       <label>Title:
                       <input
                         type="text"
@@ -112,7 +112,7 @@ class StoryEdit extends React.Component {
                       </li>
                     </ul>
                     <ul className="form-ul">
-                     <li className="li-body">
+                     <li className="form-body">
                        <label>Main Image: </label>
                          <input
                            type="file"
@@ -123,7 +123,7 @@ class StoryEdit extends React.Component {
                          </li>
                      </ul>
                     <ul className="form-ul">
-                      <li className="li-body">
+                      <li className="form-body">
                         <label>Body: </label>
                         <textarea
                           rows="50"
@@ -137,8 +137,8 @@ class StoryEdit extends React.Component {
                        </ul>
                        <br/>
                      <ul className="form-ul">
-                       <li className="li-body">
-                        <button>Update Story</button>
+                       <li className="form-body">
+                        <button className="header-button">Update</button>
                       </li>
                     </ul>
                    </form>

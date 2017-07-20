@@ -39,7 +39,7 @@ class CommentForm extends React.Component {
      <form  id="story-form" className="create-form" onSubmit={this.handleSubmit}>
        <ul className="form-ul">
          <li className="li-body">
-           <p className="create-title">Create New Comment</p>
+           <h4 className="create-title">Create New Comment</h4>
          </li>
        </ul>
         <ul className="form-ul">
@@ -57,7 +57,7 @@ class CommentForm extends React.Component {
           </ul>
           <ul className="form-ul">
             <li className="li-body">
-            <button>Create Comment</button>
+            <button className="header-button">Create</button>
             </li>
           </ul>
         </form>

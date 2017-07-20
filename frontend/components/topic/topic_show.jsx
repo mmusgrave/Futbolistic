@@ -76,11 +76,16 @@ class TopicShow extends React.Component {
         //
         storiesArray.forEach( (story) => {
           // storiesArray.push(story);
-          //
+          debugger
           storiesDisplay.push(
             <li key={parseInt(story)}>
-              <Link className="index-link" to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
-              <h4 className="author" >by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+              <Link className="index-link" to={`/stories/${parseInt(story)}`}>
+                <img src={stories[parseInt(story)].image_url}/>
+                <div className='title-and-author'>
+                  <h2 className="title">{stories[parseInt(story)].title}</h2>
+                  <h4 className="author" >by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+                </div>
+              </Link>
               <br/>
             </li>
           );

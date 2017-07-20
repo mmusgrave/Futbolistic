@@ -60,12 +60,12 @@ class StoryForm extends React.Component {
    return (
      <form  id="story-form" className="create-form" onSubmit={this.handleSubmit}>
        <ul className="form-ul">
-         <li className="li-body">
+         <li className="form-body">
            <h1 className="create-title">Create New Story</h1>
          </li>
        </ul>
        <ul className="form-ul">
-        <li className="li-body">
+        <li className="form-body">
           <label>Title: </label>
             <input
               type="text"
@@ -77,19 +77,20 @@ class StoryForm extends React.Component {
             </li>
         </ul>
         <ul className="form-ul">
-         <li className="li-body">
+         <li className="form-body">
            <label>Main Image: </label>
              <input
                type="file"
                onChange={this.updateFile}
              />
-             <img src={this.state.imageUrl}/>
+             <img className="img-preview" src={this.state.imageUrl}/>
              <br/>
              </li>
          </ul>
         <ul className="form-ul">
-        <li className="li-body">
+        <li className="form-body">
             <label>Body: </label>
+            <br/>
             <textarea
               rows="50"
               cols="150"
@@ -102,8 +103,8 @@ class StoryForm extends React.Component {
           </li>
           </ul>
           <ul className="form-ul">
-            <li className="li-body">
-            <button>Create Story</button>
+            <li className="form-body">
+            <button className="header-button">Create</button>
             </li>
           </ul>
         </form>

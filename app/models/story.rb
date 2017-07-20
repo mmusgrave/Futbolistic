@@ -17,7 +17,7 @@
 class Story < ActiveRecord::Base
   validates :title, :body, :author_id, presence: true
 
-  has_attached_file :image#, default_url: "soccer-ball.jpg"
+  has_attached_file :image, default_url: 'https://s3.amazonaws.com/futbolistic-pro/defaultSoccerPic.jpg'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :author,

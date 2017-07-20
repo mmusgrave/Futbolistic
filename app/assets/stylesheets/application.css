@@ -151,7 +151,9 @@ div {
   color: white;
   font-size: 20px;
   width: 100px;
+  height: 28px;
   margin-top: 7px;
+  text-decoration: none;
 
 }
 .header-button:hover {
@@ -325,11 +327,25 @@ div {
   padding: 0px;
   text-decoration: none;
   color: black;
+  flex-wrap: wrap;
 }
 
-.subscription-ul{
+.index-link  > img{
+  width: 500px;
+}
+
+.stories-subscription-ul{
+  padding: 20px;
+  width: 600px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+}
+
+.topics-subscription-ul{
   padding: 20px;
   width: 300px;
+  height: auto;
   text-decoration: none;
   color: black;
   border: 1px solid black;
@@ -337,21 +353,31 @@ div {
 
 .index-link {
   text-decoration: none;
-  color: black;
+  /*color: black;*/
   font-size: 24px;
+  background-color: black;
+  height: 0px;
+  /*padding-left: 5px;*/
+  /*padding-top: 5px;*/
   /*display: flex;
   justify-content: center;*/
 }
 
 .index-link:hover {
   text-decoration: underline;
-  color: black;
+  color: white;
+}
+
+.title {
+  padding-left: 5px;
+  margin: 0px;
 }
 
 .author {
   margin: 0px;
   font-size: 12px;
-  padding-left: 15px;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 .topic-title {
@@ -361,7 +387,17 @@ div {
 
 .title-ul {
   padding: 0px;
+  display: flex;
+  justify-content: center;
+  width:700px;;
 }
+
+.title-and-author {
+  background-color: black;
+  color: white;
+  width: 500px;
+}
+
 
 
 .index-div {
@@ -374,14 +410,104 @@ div {
   color: black;
 }
 
-.show-title {
+.show-container {
   background-color: white;
+  width: 100%;
+}
+
+.show-title {
+  /*background-color: white;*/
+  padding-top: 30px;
+  margin:auto;
+  width: 700px;
+  /*display: flex;
+  align-items: center;*/
+}
+
+.button-ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-ul {
+  margin: auto;
+}
+
+.show-image {
+  width: 700px;
+}
+
+.comment {
+  padding-bottom: 10px;
+}
+
+.comment > p {
+  margin: 5px;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.img-preview {
+  width: 200px;
+}
+
+.story-form {
+  color: white;
+  background-color: black;
+}
+
+.form-body {
+  color: white;
 }
 
 .form-ul {
-  background-color: white;
+  /*background-color: white;*/
+  padding-left: 0;
 }
 
 .comments {
   background-color: white;
+}
+
+.sub-title-and-author {
+  background-color: black;
+  color: white;
+  width: inherit;
+}
+
+.subscription-link {
+  text-decoration: none;
+  /*color: black;*/
+  font-size: 24px;
+  background-color: black;
+  height: 0px;;
+}
+
+
+.subscription-link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.subscription-link  > img{
+  width: 600px;
+}
+
+.topic-link {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  /*background-color: white;*/
+  height: 0px;
+  /*padding-left: 5px;*/
+  /*padding-top: 5px;*/
+  /*display: flex;
+  justify-content: center;*/
+}
+
+.topic-link:hover {
+  text-decoration: underline;
+  /*color: white;*/
 }

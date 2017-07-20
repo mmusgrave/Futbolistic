@@ -30,8 +30,13 @@ class SubscriptionFeed extends React.Component {
 
           storiesDisplay.push(
             <li key={parseInt(story)}>
-              <Link  className="index-link" to={`/stories/${parseInt(story)}`}>{stories[parseInt(story)].title}</Link>
-              <h4 className="author">by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+              <Link  className="subscription-link" to={`/stories/${parseInt(story)}`}>
+                <img src={stories[parseInt(story)].image_url}/>
+                <div className='sub-title-and-author'>
+                  <h4 className="title">{stories[parseInt(story)].title}</h4>
+                  <h4 className="author">by {stories[parseInt(story)].author.first_name} {stories[parseInt(story)].author.last_name}</h4>
+                </div>
+              </Link>
               <br/>
             </li>
           );
@@ -44,18 +49,18 @@ class SubscriptionFeed extends React.Component {
         topicsArray.forEach( (topic) => {
           topicsDisplay.push(
             <li key={parseInt(topic)}>
-              <Link className="index-link" to={`/topics/${parseInt(topic)}`}>{topics[parseInt(topic)].topic_name}</Link>
+              <Link className="topic-link" to={`/topics/${parseInt(topic)}`}>{topics[parseInt(topic)].topic_name}</Link>
             </li>
           );
         });
         //
         return (
           <div className="index-div">
-            <ul className="index-ul subscription-ul">
+            <ul className="index-ul stories-subscription-ul">
               <h1>Subscribed Stories</h1>
               {storiesDisplay}
             </ul>
-            <ul className="index-ul subscription-ul">
+            <ul className="index-ul topics-subscription-ul">
               <h1>Subscribed Topics</h1>
               {topicsDisplay}
             </ul>

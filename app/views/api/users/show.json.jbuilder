@@ -19,6 +19,7 @@ json.subscribed_stories do
     json.set! story.id do
       json.extract! story, :id, :title
       json.author story.author, :id, :first_name, :last_name
+      json.image_url asset_path(story.image.url)
       json.tagged_topics do
         story.tagged_topics.each do |topic|
           json.set! topic.id do
